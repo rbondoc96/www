@@ -1,0 +1,45 @@
+{
+    "include": ["__tests__", "src", "tailwind.config.ts"],
+    "references": [
+        {
+            "path": "./tsconfig.node.json"
+        }
+    ],
+    "compilerOptions": {
+        // Project Environment
+        "jsx": "react-jsx",
+        "lib": ["ES2020", "DOM", "DOM.Iterable"],
+        "paths": {
+            "@/*": ["./src/*"]
+        },
+        "plugins": [{ "name": "typescript-plugin-css-modules" }],
+
+        // General
+        "allowImportingTsExtensions": false,
+        "moduleResolution": "Bundler",
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+
+        // Build
+        "target": "ESNext",
+        "module": "ESNext",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "isolatedModules": true,
+        "outDir": "build",
+        "noEmit": true,
+        "removeComments": true,
+
+        // Linting
+        "allowJs": false,
+        "forceConsistentCasingInFileNames": true,
+        "useDefineForClassFields": true,
+        "strict": true,
+        "strictNullChecks": true,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitReturns": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noUncheckedIndexedAccess": true
+    }
+}
