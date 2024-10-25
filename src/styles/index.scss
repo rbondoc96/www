@@ -25,8 +25,9 @@
         --secondary: 210 40% 96.1%;
         --secondary-foreground: 222.2 47.4% 11.2%;
 
-        --accent: 210 40% 96.1%;
-        --accent-foreground: 222.2 47.4% 11.2%;
+        --accent: 345 100% 78%;
+        --accent-hover: 345 95% 71%;
+        --accent-foreground: 210 40% 98%;
 
         --muted: 210 40% 96.1%;
         --muted-foreground: 215.4 16.3% 46.9%;
@@ -75,7 +76,8 @@
         --secondary: 222.2 47.4% 11.2%;
         --secondary-foreground: 210 40% 98%;
 
-        --accent: 216 34% 17%;
+        --accent: 345 100% 78%;
+        --accent-hover: 345 95% 71%;
         --accent-foreground: 210 40% 98%;
 
         --muted: 223 47% 11%;
@@ -120,6 +122,13 @@
 }
 
 #root {
-    display: flex;
-    flex-direction: column;
+    @apply flex flex-col;
 }
+
+@supports (view-transition-name: none) {
+    .xanim-fade-in {
+        @apply animate-in fade-in;
+        transition-duration: 400ms;
+    }
+}
+

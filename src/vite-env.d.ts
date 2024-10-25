@@ -4,7 +4,7 @@ interface ImportMetaEnv {
     readonly DEV: boolean;
     readonly MODE: 'development' | 'production';
     readonly PROD: boolean;
-    readonly VITE_BASE_URL: string;
+    readonly VITE_RESUME_URL: string;
 }
 
 interface ImportMeta {

@@ -1,16 +1,40 @@
 import { resolve } from 'node:path';
 import react from '@vitejs/plugin-react-swc';
-import { defineConfig } from 'vite';
+import { defineConfig, loadEnv, type PluginOption } from 'vite';
 
-import { dirname } from './helpers';
+type UmamiConfig = {
+    url?: string;
+    websiteId?: string;
+};
 
-const __dirname = dirname(import.meta.url);
+function injectUmamiAnalytics(mode: string, config: UmamiConfig): PluginOption {
+    return {
+        name: 'inject-umami-analytics',
+        transformIndexHtml: (html) => {
+            if (mode !== 'production' || !config.url || !config.websiteId) {
+                return html.replace(/<!-- Umami Analytics -->/, '');
+            }
 
-export default defineConfig({
-    plugins: [react()],
-    resolve: {
-        alias: {
-            '@': resolve(__dirname, 'src'),
+            return html.replace(
+                /<!-- Umami Analytics -->/,
+                `<script defer src="https://analytics.us.umami.is/script.js" data-website-id="${config.websiteId}"></script>`,
+            );
         },
-    },
+    };
+}
+
+export default defineConfig(({ mode }) => {
+    const env = loadEnv(mode, __dirname);
+
+    return {
+        plugins: [
+            react(),
+            injectUmamiAnalytics(mode, { url: env['VITE_UMAMI_SCRIPT_URL'], websiteId: env['VITE_UMAMI_WEBSITE_ID'] }),
+        ],
+        resolve: {
+            alias: {
+                '@': resolve(__dirname, 'src'),
+            },
+        },
+    };
 });

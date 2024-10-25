@@ -1,10 +1,6 @@
 import { resolve } from 'node:path';
 import { defineConfig } from 'vitest/config';
 
-import { dirname } from './helpers';
-
-const __dirname = dirname(import.meta.url);
-
 export default defineConfig({
     resolve: {
         alias: {

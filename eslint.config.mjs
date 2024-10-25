@@ -54,17 +54,6 @@ const config = [
         },
     },
     {
-        name: 'commonjs',
-        files: ['**/*.cjs', '**/*.cts'],
-        languageOptions: {
-            globals: globals.node,
-            sourceType: 'commonjs',
-        },
-        rules: {
-            ...eslintJs.configs.recommended.rules,
-        },
-    },
-    {
         name: 'esm',
         files: ['**/*.js', '**/*.jsx', '**/*.mjs', '**/*.mts', '**/*.ts', '**/*.tsx'],
         languageOptions: {
@@ -91,8 +80,23 @@ const config = [
         },
     },
     {
-        name: 'imports/allow-nodejs-in-scripts',
-        files: ['scripts/**/*.*', 'helpers.ts', 'vite.config.ts', 'vitest.config.ts'],
+        name: 'node/commonjs',
+        files: ['**/*.cjs', '**/*.cts'],
+        languageOptions: {
+            globals: globals.node,
+            sourceType: 'commonjs',
+        },
+        rules: {
+            ...eslintJs.configs.recommended.rules,
+        },
+    },
+    {
+        name: 'node/esm',
+        files: ['scripts/**/*.mts', 'helpers.ts', 'vite.config.ts', 'vitest.config.ts'],
+        languageOptions: {
+            globals: globals.node,
+            sourceType: 'module',
+        },
         rules: {
             'import/no-nodejs-modules': 'off',
         },

@@ -2,7 +2,7 @@ import '@/styles/index.scss';
 
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { Root } from '@/root';
+import { App } from '@/app';
 
 const rootElement = document.getElementById('root');
 
@@ -12,6 +12,6 @@ if (rootElement === null) {
 
 createRoot(rootElement).render(
     <StrictMode>
-        <Root />
+        <App />
     </StrictMode>,
 );
