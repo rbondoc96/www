@@ -24,16 +24,7 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
 
         const Component =
             to !== undefined ? (
-                <RouterLink
-                    to={to}
-                    className={composedClassName}
-                    onClick={() => {
-                        if (document.startViewTransition) {
-                            document.startViewTransition();
-                        }
-                    }}
-                    {...props}
-                >
+                <RouterLink to={to} className={composedClassName} viewTransition {...props}>
                     {children}
                 </RouterLink>
             ) : (
