@@ -1,4 +1,4 @@
-# React Template
+# Personal Website
 
 ## Setup
 1. Install dependencies: `npm ci`
