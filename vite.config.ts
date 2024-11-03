@@ -17,7 +17,7 @@ function injectUmamiAnalytics(mode: string, config: UmamiConfig): PluginOption {
 
             return html.replace(
                 /<!-- Umami Analytics -->/,
-                `<script defer src="https://analytics.us.umami.is/script.js" data-website-id="${config.websiteId}"></script>`,
+                `<script defer src="${config.url}" data-website-id="${config.websiteId}"></script>`,
             );
         },
     };
