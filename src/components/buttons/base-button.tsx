@@ -22,15 +22,7 @@ export const BaseButton = forwardRef<HTMLButtonElement, BaseButtonProps>(
                 {...props}
             >
                 {loading && (
-                    <span
-                        className={cn(
-                            'absolute top-1/2 left-1/2',
-                            'transform -translate-x-1/2 -translate-y-1/2',
-                            // These classes don't do anything on their own, but instead
-                            // allow this component to be targeted by CSS.
-                            'loading-indicator',
-                        )}
-                    >
+                    <span className={cn('absolute top-1/2 left-1/2', 'transform -translate-x-1/2 -translate-y-1/2')}>
                         <UpdateIcon className="animate-spin" />
                         <span className="sr-only">Loading</span>
                     </span>
