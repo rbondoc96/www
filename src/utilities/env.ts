@@ -1,4 +1,6 @@
 type Environment = {
+    VITE_POSTHOG_HOST: string;
+    VITE_POSTHOG_KEY: string;
     VITE_RESUME_URL: string;
 };
 
