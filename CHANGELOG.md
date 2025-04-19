@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.0.0 (2025-04-19)
+
+* Migrated to Next.js
+* Upgraded to TailwindCSS v4
+* Upgraded to React 19
+* Site redesign and content updates
+* Add PostHog event tracking when clicking certain links
+
 ## 3.0.1 (2024-11-26)
 
 ### Main Updates
