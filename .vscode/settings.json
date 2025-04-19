@@ -10,10 +10,8 @@
     },
     "prettier.configPath": "prettier.config.mjs",
     "tailwindCSS.classAttributes": ["class", "class:list", "className", "classNames", "ngClass", "ng-class"],
-    "tailwindCSS.experimental.classRegex": [
-        ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
-        ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
-    ],
+    "tailwindCSS.experimental.configFile": "src/app/ui/globals.scss",
+    "tailwindCSS.classFunctions": ["clsx", "cn", "cva", "cx"],
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true

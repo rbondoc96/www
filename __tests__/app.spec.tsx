@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react';
 import { describe, it } from 'vitest';
-import { App } from '@/app';
+import Page from '@/app/page';
 
-describe('App', () => {
-    it('renders the App component', () => {
-        render(<App />);
+describe('/', () => {
+    it('renders the Page component', () => {
+        render(<Page />);
     });
 });

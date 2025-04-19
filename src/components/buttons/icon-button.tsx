@@ -1,3 +1,5 @@
+'use client';
+
 import { Slot } from '@radix-ui/react-slot';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { forwardRef } from 'react';
@@ -7,6 +9,7 @@ import { cn } from '@/utilities/cn';
 const styles = cva(
     [
         'relative',
+        'cursor-pointer',
         'aspect-square',
         'flex items-center justify-center',
         'outline-0 rounded-lg',
@@ -20,7 +23,8 @@ const styles = cva(
                 xs: ['h-6 [&_svg]:h-4 [&_svg]:w-4'],
             },
             theme: {
-                neutral: ['bg-transparent', 'text-[inherit]', 'hover:text-accent-hover'],
+                accent: ['bg-transparent', 'text-inherit hover:text-accent-hover'],
+                neutral: ['bg-transparent', 'text-[inherit]'],
             },
         },
         defaultVariants: {

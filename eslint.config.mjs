@@ -1,69 +1,47 @@
-import eslintJs from '@eslint/js';
-import importPlugin from 'eslint-plugin-import';
-import jsxA11y from 'eslint-plugin-jsx-a11y';
-import react from 'eslint-plugin-react';
-import reactHooks from 'eslint-plugin-react-hooks';
-import reactRefresh from 'eslint-plugin-react-refresh';
-import simpleImportPlugin from 'eslint-plugin-simple-import-sort';
+// @ts-check
+
+import { dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { FlatCompat } from '@eslint/eslintrc';
+import eslint from '@eslint/js';
+import pluginJsxA11y from 'eslint-plugin-jsx-a11y';
+import pluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
+import pluginReact from 'eslint-plugin-react';
+import pluginReactHooks from 'eslint-plugin-react-hooks';
+import pluginSimpleImportSort from 'eslint-plugin-simple-import-sort';
 import globals from 'globals';
-import tsEsLint from 'typescript-eslint';
+import tseslint from 'typescript-eslint';
 
-/**
- * @typedef {import('eslint').Linter.Config} Config
- */
+const flatCompat = new FlatCompat({
+    baseDirectory: dirname(fileURLToPath(import.meta.url)),
+});
 
-/** @type {Config[]} */
-const config = [
+export default tseslint.config([
     {
-        ignores: ['**/*.gen.*', '**/build/', '**/dist/', '**/node_modules/'],
+        name: 'ignores',
+        ignores: ['./**/*.scss'],
     },
     {
         name: 'base',
+        files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
         languageOptions: {
             ecmaVersion: 'latest',
-        },
-        linterOptions: {
-            reportUnusedDisableDirectives: true,
-        },
-    },
-    {
-        name: 'typescript',
-        files: ['**/*.cts', '**/*.mts', '**/*.ts', '**/*.tsx'],
-        languageOptions: {
-            globals: {
-                // Used for NodeJS.Timeout, NodeJS.Interval types
-                NodeJS: true,
+            parserOptions: {
+                sourceType: 'module',
             },
-            parser: tsEsLint.parser,
         },
         plugins: {
-            '@typescript-eslint': tsEsLint.plugin,
+            'simple-import-sort': pluginSimpleImportSort,
         },
         rules: {
-            ...eslintJs.configs.recommended.rules,
-            // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/src/configs/recommended.ts
-            ...tsEsLint.configs.recommended.rules,
             'no-redeclare': 'off',
             'no-unused-vars': 'off',
             '@typescript-eslint/no-unused-vars': [
-                'error',
+                'warn',
                 {
                     argsIgnorePattern: '^_',
                 },
             ],
-        },
-    },
-    {
-        name: 'esm',
-        files: ['**/*.js', '**/*.jsx', '**/*.mjs', '**/*.mts', '**/*.ts', '**/*.tsx'],
-        languageOptions: {
-            sourceType: 'module',
-        },
-        plugins: {
-            'import': importPlugin,
-            'simple-import-sort': simpleImportPlugin,
-        },
-        rules: {
             'sort-imports': 'off',
             'import/first': 'error',
             'import/newline-after-import': 'error',
@@ -74,59 +52,46 @@ const config = [
             'simple-import-sort/imports': [
                 'error',
                 {
-                    groups: [['^\\u0000'], ['^node:', '^@?\\w', '^~(/.*|$)', '^!(/.*|$)', '^@(/.*|$)'], ['^', '^\\.']],
+                    // prettier-ignore
+                    groups: [
+                        ['^\\u0000'],
+                        [
+                            '^node:',
+                            '^@?\\w',
+                            '^~(/.*|$)',
+                            '^!(/.*|$)',
+                            '^@(/.*|$)',
+                        ],
+                        ['^', '^\\.'],
+                    ],
                 },
             ],
         },
     },
     {
-        name: 'node/commonjs',
-        files: ['**/*.cjs', '**/*.cts'],
-        languageOptions: {
-            globals: globals.node,
-            sourceType: 'commonjs',
-        },
-        rules: {
-            ...eslintJs.configs.recommended.rules,
-        },
-    },
-    {
-        name: 'node/esm',
-        files: ['scripts/**/*.mts', 'helpers.ts', 'vite.config.ts', 'vitest.config.ts'],
-        languageOptions: {
-            globals: globals.node,
-            sourceType: 'module',
-        },
+        name: 'allow-nodejs-modules',
+        files: ['./eslint.config.mjs', './vitest.config.ts', './src/**/*{js,cjs,mjs,s,cts,mts}'],
         rules: {
             'import/no-nodejs-modules': 'off',
         },
     },
     {
-        name: 'typescript/react-web',
-        files: ['__tests__/**/*.ts', '__tests__/**/*.tsx', 'src/**/*.ts', 'src/**/*.tsx'],
+        name: 'web',
+        files: ['./src/**/*.{jsx,tsx}'],
         languageOptions: {
-            globals: {
-                ...globals.browser,
-            },
-            parserOptions: {
-                ecmaFeatures: {
-                    jsx: true,
-                },
-                jsxPragma: null,
-            },
+            globals: globals.browser,
         },
         plugins: {
-            'jsx-a11y': jsxA11y,
-            'react': react,
-            'react-hooks': reactHooks,
-            'react-refresh': reactRefresh,
+            'jsx-a11y': pluginJsxA11y,
+            'react': pluginReact,
+            'react-hooks': pluginReactHooks,
         },
         rules: {
-            ...jsxA11y.configs.recommended.rules,
-            ...react.configs.recommended.rules,
-            ...reactHooks.configs.recommended.rules,
+            ...pluginJsxA11y.configs.recommended.rules,
+            ...pluginReact.configs.recommended.rules,
+            ...pluginReactHooks.configs['recommended-latest'].rules,
             'react/react-in-jsx-scope': 'off',
-            'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+            'react-hooks/exhaustive-deps': 'warn',
         },
         settings: {
             react: {
@@ -134,6 +99,10 @@ const config = [
             },
         },
     },
-];
-
-export default config;
+    ...flatCompat.config({
+        extends: ['next'],
+    }),
+    eslint.configs.recommended,
+    pluginPrettierRecommended,
+    tseslint.configs.recommended,
+]);

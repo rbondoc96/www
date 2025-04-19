@@ -1,47 +1,45 @@
-import { cva } from 'class-variance-authority';
-import { forwardRef, type JSX } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
-import { IconButton } from '@/components/buttons/icon-button';
-import { TextButton } from '@/components/buttons/text-button';
+'use client';
+
+import { cva, VariantProps } from 'class-variance-authority';
+import NextLink from 'next/link';
+import { AnchorHTMLAttributes, forwardRef } from 'react';
 import { cn } from '@/utilities/cn';
 
-const styles = cva(['text-accent hover:text-accent-hover']);
+const styles = cva([], {
+    variants: {
+        variant: {
+            accent: ['text-accent hover:text-accent'],
+        },
+    },
+});
 
-type HtmlAnchorProps = JSX.IntrinsicElements['a'];
-type PickedProps = Omit<HtmlAnchorProps, 'rel' | 'target'>;
+type PickedProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'rel' | 'target'>;
 
-type LinkProps = PickedProps & {
+export interface LinkProps extends PickedProps, VariantProps<typeof styles> {
     // Accepts any string, but gives intellisense for 'noreferrer'
     rel?: 'noreferrer' | (string & {});
     target?: '_blank' | '_self' | '_parent' | '_top';
     to?: string;
-    variant?: 'icon-button';
-};
+    underline?: boolean;
+}
 
 export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
-    ({ children, className, href, rel, target, to, variant, ...props }, ref) => {
-        const composedClassName = cn(styles(), className);
+    ({ children, className, href, rel, target, to, underline = false, variant, ...props }, ref) => {
+        const composedClassName = cn(
+            styles({ variant }),
+            underline && 'hover:underline hover:underline-offset-4',
+            className,
+        );
 
-        const Component =
-            to !== undefined ? (
-                <RouterLink to={to} className={composedClassName} viewTransition {...props}>
-                    {children}
-                </RouterLink>
-            ) : (
-                <a className={composedClassName} href={href} ref={ref} rel={rel} target={target} {...props}>
-                    {children}
-                </a>
-            );
-
-        if (variant === 'icon-button') {
-            return <IconButton asChild>{Component}</IconButton>;
-        }
-
-        if (variant === 'text-button') {
-            return <TextButton asChild>{Component}</TextButton>;
-        }
-
-        return Component;
+        return to !== undefined ? (
+            <NextLink href={to} className={composedClassName} {...props}>
+                {children}
+            </NextLink>
+        ) : (
+            <a className={composedClassName} href={href} ref={ref} rel={rel} target={target} {...props}>
+                {children}
+            </a>
+        );
     },
 );
 

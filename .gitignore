@@ -1,11 +1,13 @@
 # Build artifacts
+.next
 dist
 
 # Dependencies
 node_modules
 
 # Environment
-.env
+.env*
+!.env.example
 
 # IDEs
 .idea

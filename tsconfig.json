@@ -1,5 +1,6 @@
 {
-    "include": ["__tests__", "src", "tailwind.config.ts"],
+    "include": ["__tests__", "src", "next.config.ts", "next-env.d.ts", ".next/types/**/*.ts"],
+    "exclude": ["node_modules"],
     "references": [
         {
             "path": "./tsconfig.node.json"
@@ -7,19 +8,24 @@
     ],
     "compilerOptions": {
         // Project Environment
-        "jsx": "react-jsx",
+        "jsx": "preserve",
         "lib": ["ES2020", "DOM", "DOM.Iterable"],
         "paths": {
             "@/*": ["./src/*"]
         },
-        "plugins": [{ "name": "typescript-plugin-css-modules" }],
-
+        "plugins": [
+            {
+                "name": "typescript-plugin-css-modules"
+            },
+            {
+                "name": "next"
+            }
+        ],
         // General
         "allowImportingTsExtensions": false,
         "moduleResolution": "Bundler",
         "resolveJsonModule": true,
         "skipLibCheck": true,
-
         // Build
         "target": "ESNext",
         "module": "ESNext",
@@ -29,7 +35,6 @@
         "outDir": "build",
         "noEmit": true,
         "removeComments": true,
-
         // Linting
         "allowJs": false,
         "forceConsistentCasingInFileNames": true,
@@ -40,6 +45,7 @@
         "noImplicitReturns": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
-        "noUncheckedIndexedAccess": true
+        "noUncheckedIndexedAccess": true,
+        "incremental": true
     }
 }
