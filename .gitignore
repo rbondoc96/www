@@ -1,5 +1,6 @@
 # Build artifacts
 .next
+build
 dist
 
 # Dependencies

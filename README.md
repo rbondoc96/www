@@ -1,12 +1,14 @@
 # Personal Website
 
 ## Setup
-1. Install dependencies: `npm ci`
-2. Run the dev server: `npm run dev`
+
+1. Install dependencies: `pnpm i --frozen-lockfile`
+2. Run the dev server: `pnpm dev`
 
 ## Common Commands
-* `npm run checks` - Runs type, linting, and formatting checks concurrently
-* `npm run format` - Runs Prettier code style checks
-* `npm run lint` - Runs ESLint checks
-* `npm run stan` - Runs the TypeScript compiler as a type checker
-* `npm run test` - Runs test scripts
+
+* `pnpm checks` - Runs type, linting, and formatting checks concurrently
+* `pnpm format` - Runs Prettier code style checks
+* `pnpm lint` - Runs ESLint checks
+* `pnpm stan` - Runs the TypeScript compiler as a type checker
+* `pnpm test` - Runs test scripts
