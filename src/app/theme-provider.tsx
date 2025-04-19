@@ -22,7 +22,19 @@ export function ThemeSwitch({ className }: ThemeSwitchProps): ReactNode {
     }, []);
 
     if (!mounted) {
-        return null;
+        return (
+            <div className={className}>
+                <button className="appearance-none bg-transparent rounded-sm border-none cursor-pointer p-2 opacity-35">
+                    <SunIcon className="h-4 w-4" />
+                </button>
+                <button className="appearance-none bg-transparent rounded-sm border-none cursor-pointer p-2 opacity-35">
+                    <MoonIcon className="h-4 w-4" />
+                </button>
+                <button className="appearance-none bg-transparent rounded-sm border-none cursor-pointer p-2 opacity-35">
+                    <LaptopIcon className="h-4 w-4" />
+                </button>
+            </div>
+        );
     }
 
     return (
