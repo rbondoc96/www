@@ -1,7 +1,7 @@
 'use client';
 
 import { cva, VariantProps } from 'class-variance-authority';
-import NextLink from 'next/link';
+import { Link as NextLink } from 'next-view-transitions';
 import { AnchorHTMLAttributes, forwardRef } from 'react';
 import { cn } from '@/utilities/cn';
 
