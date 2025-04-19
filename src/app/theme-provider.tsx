@@ -5,7 +5,11 @@ import { ThemeProvider as NextThemeProvider, useTheme } from 'next-themes';
 import { type PropsWithChildren, type ReactNode, useEffect, useState } from 'react';
 import { cn } from '@/utilities/cn';
 
-export function ThemeSwitch(): ReactNode {
+type ThemeSwitchProps = {
+    className?: string;
+};
+
+export function ThemeSwitch({ className }: ThemeSwitchProps): ReactNode {
     const [mounted, setMounted] = useState(false);
     const { theme, setTheme } = useTheme();
 
@@ -22,7 +26,7 @@ export function ThemeSwitch(): ReactNode {
     }
 
     return (
-        <div className="absolute top-0 right-0 m-8">
+        <div className={className}>
             <button
                 className={cn(
                     'appearance-none bg-transparent rounded-sm border-none cursor-pointer p-2 opacity-35',
@@ -30,7 +34,7 @@ export function ThemeSwitch(): ReactNode {
                 )}
                 onClick={() => setTheme('light')}
             >
-                <SunIcon className="h-2.5 w-2.5 md:h-4 md:w-4" />
+                <SunIcon className="h-4 w-4" />
             </button>
             <button
                 className={cn(
@@ -39,7 +43,7 @@ export function ThemeSwitch(): ReactNode {
                 )}
                 onClick={() => setTheme('dark')}
             >
-                <MoonIcon className="h-2.5 w-2.5 md:h-4 md:w-4" />
+                <MoonIcon className="h-4 w-4" />
             </button>
             <button
                 className={cn(
@@ -48,7 +52,7 @@ export function ThemeSwitch(): ReactNode {
                 )}
                 onClick={() => setTheme('system')}
             >
-                <LaptopIcon className="h-2.5 w-2.5 md:h-4 md:w-4" />
+                <LaptopIcon className="h-4 w-4" />
             </button>
         </div>
     );
@@ -57,7 +61,6 @@ export function ThemeSwitch(): ReactNode {
 export function ThemeProvider({ children }: PropsWithChildren): ReactNode {
     return (
         <NextThemeProvider attribute="class" defaultTheme="system" disableTransitionOnChange enableSystem>
-            <ThemeSwitch />
             {children}
         </NextThemeProvider>
     );

@@ -19,7 +19,7 @@ export default function RootLayout({ children }: PropsWithChildren): ReactNode {
         <html lang="en" suppressHydrationWarning>
             <body className={cn(sora.className, 'relative', 'antialiased', 'min-h-screen', 'flex flex-col')}>
                 <AnalyticsProvider>
-                    <div className="flex-1 relative container flex flex-col mx-auto px-4 py-8 h-full">
+                    <div className="flex-1 relative container flex flex-col mx-auto px-4 h-full">
                         <ThemeProvider>
                             {children}
                             <footer className="flex flex-col items-center gap-y-2.5">

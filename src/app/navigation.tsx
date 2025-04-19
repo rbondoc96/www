@@ -2,6 +2,7 @@
 
 import { MenuIcon } from 'lucide-react';
 import { type ReactNode } from 'react';
+import { ThemeSwitch } from '@/app/theme-provider';
 import { orbitron } from '@/app/ui/fonts';
 import { Link } from '@/components/link';
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
@@ -11,7 +12,7 @@ export function MobileSiteNavigation(): ReactNode {
     return (
         <Sheet>
             <SheetTrigger>
-                <MenuIcon className="h-4.5 w-4.5" />
+                <MenuIcon className="h-6 w-6" />
             </SheetTrigger>
             <SheetContent side="top">
                 <SheetTitle className="sr-only">Navigation</SheetTitle>
@@ -55,25 +56,28 @@ export function SiteNavigation(): ReactNode {
 export function HeaderNavigation(): ReactNode {
     return (
         <header>
-            <div className="grid grid-cols-3 items-center">
-                <div className="m-1">
+            <div className="grid grid-cols-3 items-center my-8">
+                <div className="inline-flex md:block">
                     <div className="hidden sm:block">
                         <SiteNavigation />
                     </div>
-                    <div className="sm:hidden">
+                    <div className="inline-flex sm:hidden">
                         <MobileSiteNavigation />
                     </div>
                 </div>
-                <Link
-                    className={cn(
-                        orbitron.className,
-                        'font-semibold text-center text-xl md:text-2xl',
-                        'hidden sm:inline',
-                    )}
-                    to="/"
-                >
-                    RDB
-                </Link>
+                <div className="flex justify-center">
+                    <Link
+                        className={cn(
+                            orbitron.className,
+                            'font-semibold text-center text-xl md:text-2xl',
+                            'hidden sm:inline',
+                        )}
+                        to="/"
+                    >
+                        RDB
+                    </Link>
+                </div>
+                <ThemeSwitch className="flex justify-end" />
             </div>
         </header>
     );
