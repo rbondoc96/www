@@ -7,8 +7,8 @@ export const metadata: Metadata = {
 
 export default function Page(): ReactNode {
     return (
-        <div className="flex-1 flex flex-col justify-center items-center">
+        <main className="flex-1 flex flex-col justify-center items-center">
             <p>Coming soon...</p>
-        </div>
+        </main>
     );
 }

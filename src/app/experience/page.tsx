@@ -10,13 +10,13 @@ import { cn } from '@/utilities/cn';
 import { env } from '@/utilities/env';
 
 export const metadata: Metadata = {
-    title: 'Rodrigo Bondoc | Work',
+    title: 'Rodrigo Bondoc | Experience',
 };
 
 export default function Page(): ReactNode {
     return (
         <ViewTransition>
-            <div className="flex-1 flex flex-col gap-6 md:gap-8 md:mt-6 lg:mt-8 mb-12">
+            <main className="flex-1 flex flex-col gap-6 md:gap-8 md:mt-6 lg:mt-8 mb-12">
                 <h1
                     className={cn(
                         orbitron.className,
@@ -74,7 +74,7 @@ export default function Page(): ReactNode {
                 </div>
 
                 <Timeline />
-            </div>
+            </main>
         </ViewTransition>
     );
 }
