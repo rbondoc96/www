@@ -24,7 +24,7 @@ export default function RootLayout({ children }: PropsWithChildren): ReactNode {
                         <div className="flex-1 relative container flex flex-col mx-auto px-4 h-full">
                             <ThemeProvider>
                                 {children}
-                                <footer className="flex flex-col items-center gap-y-2.5">
+                                <footer className="flex flex-col items-center gap-y-2.5 pb-8">
                                     <p className="text-xs md:text-sm tracking-tight">
                                         &copy; {year} All Rights Reserved.
                                     </p>
