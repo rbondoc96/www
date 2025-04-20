@@ -42,7 +42,7 @@ const sections: Section[] = [
         ],
     },
     {
-        company: 'snapClinical',
+        company: 'SnapClinical',
         href: 'https://www.snapclinical.cn/',
         positions: [{ title: 'Software QA Engineer', period: '2021 - 2022' }],
         body: [
@@ -82,14 +82,17 @@ const TimelineItem = ({ section }: TimelineItemProps) => {
             </div>
             <div className="relative col-span-2 sm:col-span-1 flex flex-col gap-y-4 border-l border-zinc-700 pl-8 ml-4 sm:ml-0">
                 <div className="absolute top-0 left-0 -translate-x-1/2 h-5 w-5 rounded-full bg-black dark:bg-white" />
-                <Link
-                    className="sm:hidden inline-block tracking-tight text-xl hover:text-accent hover:-translate-y-[5px] transition-all duration-400"
-                    href={section.href}
-                    rel="noreferrer"
-                    target="_blank"
-                >
-                    {section.company}
-                </Link>
+                <div className="sm:hidden">
+                    <Link
+                        className="group relative sm:hidden inline-flex tracking-tight text-xl hover:text-accent transition-colors duration-400"
+                        href={section.href}
+                        rel="noreferrer"
+                        target="_blank"
+                    >
+                        {section.company}
+                        <ArrowUpRightIcon className="absolute top-1/3 -right-5 h-4 w-4 transition-transform group-hover:-translate-y-1/3 group-hover:translate-x-1/5" />
+                    </Link>
+                </div>
                 <div className="mt-2">
                     {section.positions.map((position, index) => (
                         <div key={index} className="flex flex-col gap-y-1 mb-4">
