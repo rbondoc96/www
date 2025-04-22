@@ -25,7 +25,7 @@ export default function RootLayout({ children }: PropsWithChildren): ReactNode {
                             <ThemeProvider>
                                 {children}
                                 <footer className="flex flex-col items-center gap-y-2.5 pb-8">
-                                    <p className="text-xs md:text-sm tracking-tight">
+                                    <p className="text-xs font-light md:text-sm tracking-tight">
                                         &copy; {year} All Rights Reserved.
                                     </p>
                                 </footer>
