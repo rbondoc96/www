@@ -21,8 +21,9 @@ const sections: Section[] = [
         company: 'Sourcetoad',
         href: 'https://sourcetoad.com/',
         positions: [
-            { title: 'Software Engineer II', period: '2023 - Present' },
-            { title: 'Software Engineer I', period: '2022 - 2023' },
+            { title: 'Senior Software Engineer', period: 'May 2025 - Present' },
+            { title: 'Software Engineer II', period: 'Oct 2023 - May 2025' },
+            { title: 'Software Engineer I', period: 'May 2022 - Oct 2023' },
         ],
         body: [
             'Build and maintain responsive web and mobile apps for internal use and for clients across healthcare, cruise, retail, and other industries.',

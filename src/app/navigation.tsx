@@ -1,5 +1,3 @@
-'use client';
-
 import { MenuIcon } from 'lucide-react';
 import { type ReactNode } from 'react';
 import { ThemeSwitch } from '@/app/theme-provider';
