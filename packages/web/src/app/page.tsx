@@ -17,7 +17,7 @@ export default function Page(): ReactNode {
                     <h1 className={`${orbitron.className} font-semibold text-8xl md:text-9xl tracking-tight`}>RDB</h1>
                     <p className="font-light text-center text-sm md:text-lg">Rodrigo Bondoc · San Francisco, CA</p>
                     <SiteNavigation />
-                    <SanityTest />
+                    {process.env.NODE_ENV === 'development' && <SanityTest />}
                 </div>
             </main>
         </>
