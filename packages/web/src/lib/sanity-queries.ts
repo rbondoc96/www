@@ -19,32 +19,7 @@ export const POST_QUERY = `*[_type == "post" && _id == $id][0] {
   _createdAt
 }`;
 
-const EXPERIENCE_QUERY = `*[_type == "experience"] {
-  _id,
-  _createdAt,
-  company_name,
-  description,
-  titles,
-  tags[]->{label},
-  url,
-}`;
-
 // Type definitions for your content
-export interface Experience {
-    _id: string;
-    _createdAt: string;
-    company_name: string;
-    description: string[];
-    titles: Array<{
-        title: string;
-        period: string;
-    }>;
-    tags: Array<{
-        label: string;
-    }>;
-    url: string;
-}
-
 export interface Post {
     _id: string;
     title: string;
@@ -58,15 +33,6 @@ export interface Tag {
 }
 
 // Data fetching functions
-export async function getExperiences(): Promise<Experience[]> {
-    try {
-        return await sanity.fetch(EXPERIENCE_QUERY);
-    } catch (error) {
-        console.error('Error fetching experiences:', error);
-        return [];
-    }
-}
-
 export async function getPosts(): Promise<Post[]> {
     try {
         const posts = await sanity.fetch(POSTS_QUERY);
@@ -94,16 +60,5 @@ export async function getPost(id: string): Promise<Post | null> {
     } catch (error) {
         console.error('Error fetching post:', error);
         return null;
-    }
-}
-
-// Test connection function
-export async function testSanityConnection(): Promise<boolean> {
-    try {
-        await sanity.fetch('*[_type == "post"][0]');
-        return true;
-    } catch (error) {
-        console.error('Sanity connection failed:', error);
-        return false;
     }
 }

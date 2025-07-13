@@ -4,13 +4,13 @@ import { ArrowUpRightIcon } from 'lucide-react';
 import { type ReactNode } from 'react';
 import { Link } from '@/components/link';
 import { Badge } from '@/components/ui/badge';
-import { Experience } from '@/lib/sanity-queries';
+import { Experience } from '@/lib/experiences';
 
 type TimelineItemProps = {
     experience: Experience;
 };
 
-const TimelineItem = ({ experience }: TimelineItemProps) => {
+function TimelineItem({ experience }: TimelineItemProps): ReactNode {
     return (
         <div className="grid grid-cols-2">
             <div className="hidden sm:block mt-2">
@@ -55,14 +55,14 @@ const TimelineItem = ({ experience }: TimelineItemProps) => {
                 <div className="flex flex-wrap gap-x-2 gap-y-2 pb-20">
                     {experience.tags.map((tag, index) => (
                         <Badge key={index} variant="accent">
-                            {tag.label}
+                            {tag}
                         </Badge>
                     ))}
                 </div>
             </div>
         </div>
     );
-};
+}
 
 TimelineItem.displayName = 'TimelineItem';
 

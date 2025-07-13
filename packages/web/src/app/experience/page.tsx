@@ -6,7 +6,7 @@ import { TrackedLink } from '@/analytics/tracked-link';
 import { Timeline } from '@/app/experience/timeline';
 import { orbitron } from '@/app/ui/fonts';
 import { IconButton } from '@/components/buttons/icon-button';
-import { getExperiences } from '@/lib/sanity-queries';
+import { listExperiences } from '@/lib/experiences';
 import { cn } from '@/utilities/cn';
 import { env } from '@/utilities/env';
 
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Page(): Promise<ReactNode> {
-    const experiences = await getExperiences();
+    const experiences = await listExperiences();
 
     return (
         <main className="flex-1 flex flex-col gap-6 md:gap-8 md:mt-6 lg:mt-8 mb-12">

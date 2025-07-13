@@ -21,6 +21,7 @@ export function ThemeSwitch({ className }: ThemeSwitchProps): ReactNode {
         setMounted(true);
     }, []);
 
+    // Return a skeleton without the selected theme highlighted.
     if (!mounted) {
         return (
             <div className={className}>
@@ -37,6 +38,7 @@ export function ThemeSwitch({ className }: ThemeSwitchProps): ReactNode {
         );
     }
 
+    // Return the component with the selected theme highlighted.
     return (
         <div className={className}>
             <button

@@ -9055,7 +9055,7 @@ snapshots:
 
   '@portabletext/block-tools@1.1.38(@sanity/types@3.99.0(@types/react@19.1.2)(debug@4.4.0))(@types/react@19.1.2)':
     dependencies:
-      '@sanity/types': 3.99.0(@types/react@19.1.2)
+      '@sanity/types': 3.99.0(@types/react@19.1.2)(debug@4.4.0)
       '@types/react': 19.1.2
       get-random-values-esm: 1.0.2
       lodash: 4.17.21
@@ -9067,7 +9067,7 @@ snapshots:
       '@portabletext/patches': 1.1.5
       '@portabletext/to-html': 2.0.14
       '@sanity/schema': 3.99.0(@types/react@19.1.2)(debug@4.4.0)
-      '@sanity/types': 3.99.0(@types/react@19.1.2)
+      '@sanity/types': 3.99.0(@types/react@19.1.2)(debug@4.4.0)
       '@xstate/react': 6.0.0(@types/react@19.1.2)(react@19.1.0)(xstate@5.20.1)
       debug: 4.4.1
       get-random-values-esm: 1.0.2
@@ -9526,7 +9526,7 @@ snapshots:
   '@sanity/insert-menu@1.1.12(@emotion/is-prop-valid@1.2.2)(@sanity/types@3.99.0(@types/react@19.1.2)(debug@4.4.0))(react-dom@19.1.0(react@19.1.0))(react-is@18.3.1)(react@19.1.0)(styled-components@6.1.19(react-dom@19.1.0(react@19.1.0))(react@19.1.0))':
     dependencies:
       '@sanity/icons': 3.7.4(react@19.1.0)
-      '@sanity/types': 3.99.0(@types/react@19.1.2)
+      '@sanity/types': 3.99.0(@types/react@19.1.2)(debug@4.4.0)
       '@sanity/ui': 2.16.7(@emotion/is-prop-valid@1.2.2)(react-dom@19.1.0(react@19.1.0))(react-is@18.3.1)(react@19.1.0)(styled-components@6.1.19(react-dom@19.1.0(react@19.1.0))(react@19.1.0))
       lodash: 4.17.21
       react: 19.1.0
@@ -9734,17 +9734,9 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  '@sanity/types@3.99.0(@types/react@19.1.2)':
-    dependencies:
-      '@sanity/client': 7.6.0
-      '@sanity/media-library-types': 1.0.0
-      '@types/react': 19.1.2
-    transitivePeerDependencies:
-      - debug
-
   '@sanity/types@3.99.0(@types/react@19.1.2)(debug@4.4.0)':
     dependencies:
-      '@sanity/client': 7.6.0(debug@4.4.0)
+      '@sanity/client': 7.6.0
       '@sanity/media-library-types': 1.0.0
       '@types/react': 19.1.2
     transitivePeerDependencies:
@@ -9849,7 +9841,7 @@ snapshots:
     dependencies:
       '@sanity/client': 7.6.0
     optionalDependencies:
-      '@sanity/types': 3.99.0(@types/react@19.1.2)
+      '@sanity/types': 3.99.0(@types/react@19.1.2)(debug@4.4.0)
 
   '@sanity/visual-editing@2.15.2(@emotion/is-prop-valid@1.2.2)(@sanity/client@7.6.0)(@sanity/types@3.99.0(@types/react@19.1.2))(next@15.3.0(@babel/core@7.26.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(sass@1.86.3))(react-dom@19.1.0(react@19.1.0))(react-is@18.3.1)(react@19.1.0)(styled-components@6.1.19(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.8.3)':
     dependencies:
@@ -13736,7 +13728,7 @@ snapshots:
       '@sanity/asset-utils': 2.2.1
       '@sanity/bifur-client': 0.4.1
       '@sanity/cli': 3.99.0(@types/node@22.14.1)(@types/react@19.1.2)(less@4.3.0)(lightningcss@1.29.2)(react@19.1.0)(sass@1.86.3)(stylus@0.62.0)(typescript@5.8.3)(yaml@2.7.1)
-      '@sanity/client': 7.6.0(debug@4.4.0)
+      '@sanity/client': 7.6.0
       '@sanity/color': 3.0.6
       '@sanity/comlink': 3.0.7
       '@sanity/diff': 3.99.0
