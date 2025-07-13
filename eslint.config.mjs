@@ -4,6 +4,7 @@ import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { FlatCompat } from '@eslint/eslintrc';
 import eslint from '@eslint/js';
+import pluginImport from 'eslint-plugin-import';
 import pluginJsxA11y from 'eslint-plugin-jsx-a11y';
 import pluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import pluginReact from 'eslint-plugin-react';
@@ -19,11 +20,17 @@ const flatCompat = new FlatCompat({
 export default tseslint.config([
     {
         name: 'ignores',
-        ignores: ['./**/*.scss'],
+        ignores: [
+            './**/*.scss',
+            'packages/*/node_modules/**',
+            'packages/*/.next/**',
+            'packages/*/dist/**',
+            'packages/studio/.sanity/**',
+        ],
     },
     {
         name: 'base',
-        files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
+        files: ['packages/**/*.{js,mjs,cjs,ts,jsx,tsx}', '*.{js,mjs,cjs,ts}'],
         languageOptions: {
             ecmaVersion: 'latest',
             parserOptions: {
@@ -31,6 +38,7 @@ export default tseslint.config([
             },
         },
         plugins: {
+            'import': pluginImport,
             'simple-import-sort': pluginSimpleImportSort,
         },
         rules: {
@@ -70,14 +78,19 @@ export default tseslint.config([
     },
     {
         name: 'allow-nodejs-modules',
-        files: ['./eslint.config.mjs', './vitest.config.ts', './src/**/*{js,cjs,mjs,s,cts,mts}'],
+        files: [
+            './eslint.config.mjs',
+            './packages/web/vitest.config.ts',
+            './packages/web/src/**/*{js,cjs,mjs,ts,cts,mts}',
+            './packages/studio/**/*.{js,mjs,cjs,ts}',
+        ],
         rules: {
             'import/no-nodejs-modules': 'off',
         },
     },
     {
         name: 'web',
-        files: ['./src/**/*.{jsx,tsx}'],
+        files: ['./packages/web/src/**/*.{jsx,tsx}'],
         languageOptions: {
             globals: globals.browser,
         },
@@ -99,9 +112,14 @@ export default tseslint.config([
             },
         },
     },
-    ...flatCompat.config({
-        extends: ['next'],
-    }),
+    ...flatCompat
+        .config({
+            extends: ['next'],
+        })
+        .map((config) => ({
+            ...config,
+            files: config.files?.map((file) => `packages/web/${file}`) || ['packages/web/**/*.{js,mjs,cjs,ts,jsx,tsx}'],
+        })),
     eslint.configs.recommended,
     pluginPrettierRecommended,
     tseslint.configs.recommended,
