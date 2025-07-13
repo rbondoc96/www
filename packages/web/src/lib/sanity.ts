@@ -4,7 +4,7 @@ import { env } from '@/utilities/env';
 export const sanity = createClient({
     projectId: env.NEXT_PUBLIC_SANITY_PROJECT_ID,
     dataset: env.NEXT_PUBLIC_SANITY_DATASET,
-    useCdn: true, // Set to false if statically generating pages, using ISR or tag-based revalidation
+    useCdn: false, // Set to false if statically generating pages, using ISR or tag-based revalidation
     apiVersion: '2024-07-15',
 });
 
