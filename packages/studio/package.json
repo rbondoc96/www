@@ -1,0 +1,26 @@
+{
+  "name": "@rbondoc/studio",
+  "type": "module",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "sanity build",
+    "dev": "sanity dev",
+    "deploy": "sanity deploy",
+    "start": "sanity start"
+  },
+  "dependencies": {
+    "sanity": "^3.65.0",
+    "@sanity/ui": "^2.11.6",
+    "@sanity/icons": "^3.5.0",
+    "@sanity/vision": "^3.65.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "styled-components": "^6.1.15"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "typescript": "^5.6.3"
+  }
+}
