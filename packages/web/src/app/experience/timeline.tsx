@@ -71,7 +71,6 @@ type TimelineProps = {
 };
 
 export function Timeline({ experiences }: TimelineProps): ReactNode {
-    console.log(experiences);
     return (
         <div className="mt-4">
             {experiences.map((experience, index) => (
