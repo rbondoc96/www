@@ -113,7 +113,7 @@ importers:
         version: 7.13.1
       '@t3-oss/env-nextjs':
         specifier: ^0.12.0
-        version: 0.12.0(typescript@5.8.3)(valibot@1.0.0(typescript@5.8.3))(zod@3.25.76)
+        version: 0.12.0(typescript@5.8.3)(valibot@1.2.0(typescript@5.8.3))(zod@3.25.76)
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.1
@@ -154,8 +154,8 @@ importers:
         specifier: ^1.2.5
         version: 1.2.5
       valibot:
-        specifier: ^1.0.0
-        version: 1.0.0(typescript@5.8.3)
+        specifier: ^1.2.0
+        version: 1.2.0(typescript@5.8.3)
     devDependencies:
       '@tailwindcss/postcss':
         specifier: ^4.1.4
@@ -7093,16 +7093,8 @@ packages:
     resolution: {integrity: sha512-jjRGChg03uGp9f6wQYSO8qXkweJwRbA5WRuEQE8xLIiehIzIIi23qZSzsyvZPCPoFqkeLtZuz7Plt1LGukAInA==}
     hasBin: true
 
-  valibot@1.0.0:
-    resolution: {integrity: sha512-1Hc0ihzWxBar6NGeZv7fPLY0QuxFMyxwYR2sF1Blu7Wq7EnremwY2W02tit2ij2VJT8HcSkHAQqmFfl77f73Yw==}
-    peerDependencies:
-      typescript: '>=5'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-
-  valibot@1.1.0:
-    resolution: {integrity: sha512-Nk8lX30Qhu+9txPYTwM0cFlWLdPFsFr6LblzqIySfbZph9+BFsAHsNvHOymEviUepeIW6KFHzpX8TKhbptBXXw==}
+  valibot@1.2.0:
+    resolution: {integrity: sha512-mm1rxUsmOxzrwnX5arGS+U4T25RdvpPjPN4yR0u9pUBov9+zGVtO84tif1eY4r6zWxVxu3KzIyknJy3rxfRZZg==}
     peerDependencies:
       typescript: '>=5'
     peerDependenciesMeta:
@@ -10308,7 +10300,7 @@ snapshots:
     dependencies:
       '@sanity/client': 7.13.1
       '@sanity/visual-editing-types': 1.1.8(@sanity/client@7.13.1)(@sanity/types@4.20.3(@types/react@19.2.7))
-      valibot: 1.1.0(typescript@5.8.3)
+      valibot: 1.2.0(typescript@5.8.3)
     transitivePeerDependencies:
       - '@sanity/types'
       - typescript
@@ -10389,18 +10381,18 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@t3-oss/env-core@0.12.0(typescript@5.8.3)(valibot@1.0.0(typescript@5.8.3))(zod@3.25.76)':
+  '@t3-oss/env-core@0.12.0(typescript@5.8.3)(valibot@1.2.0(typescript@5.8.3))(zod@3.25.76)':
     optionalDependencies:
       typescript: 5.8.3
-      valibot: 1.0.0(typescript@5.8.3)
+      valibot: 1.2.0(typescript@5.8.3)
       zod: 3.25.76
 
-  '@t3-oss/env-nextjs@0.12.0(typescript@5.8.3)(valibot@1.0.0(typescript@5.8.3))(zod@3.25.76)':
+  '@t3-oss/env-nextjs@0.12.0(typescript@5.8.3)(valibot@1.2.0(typescript@5.8.3))(zod@3.25.76)':
     dependencies:
-      '@t3-oss/env-core': 0.12.0(typescript@5.8.3)(valibot@1.0.0(typescript@5.8.3))(zod@3.25.76)
+      '@t3-oss/env-core': 0.12.0(typescript@5.8.3)(valibot@1.2.0(typescript@5.8.3))(zod@3.25.76)
     optionalDependencies:
       typescript: 5.8.3
-      valibot: 1.0.0(typescript@5.8.3)
+      valibot: 1.2.0(typescript@5.8.3)
       zod: 3.25.76
 
   '@tailwindcss/node@4.1.4':
@@ -15264,11 +15256,7 @@ snapshots:
 
   uuidv7@0.4.4: {}
 
-  valibot@1.0.0(typescript@5.8.3):
-    optionalDependencies:
-      typescript: 5.8.3
-
-  valibot@1.1.0(typescript@5.8.3):
+  valibot@1.2.0(typescript@5.8.3):
     optionalDependencies:
       typescript: 5.8.3
 
