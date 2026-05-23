@@ -12,3 +12,15 @@ catalog:
   sanity: ^4.20.3
   tailwindcss: ^4.1.4
   typescript: ^5.6.3
+
+allowBuilds:
+  # Native file watcher used by tooling; build needed for the platform binary.
+  '@parcel/watcher': true
+  # Postinstall is not required at runtime; keep disabled.
+  core-js: false
+  # Bundler package installs/selects its platform binary during build.
+  esbuild: true
+  # Image optimization package needs native/libvips binaries.
+  sharp: true
+  # Native resolver used by lint/tooling; postinstall verifies platform binding.
+  unrs-resolver: true
