@@ -36,7 +36,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 - TypeScript with strict configuration
 - React 19
-- Tailwind CSS v4 with custom SCSS globals
+- Tailwind CSS v4 with custom CSS globals
 - PostHog analytics integration
 - Theme switching via next-themes
 
@@ -53,7 +53,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 **Styling**:
 
 - Tailwind CSS with custom configuration
-- SCSS globals in `packages/web/src/app/ui/globals.scss`
+- CSS globals in `packages/web/src/app/ui/globals.css`
 - Component variants via class-variance-authority
 - Radix UI components for primitives
 

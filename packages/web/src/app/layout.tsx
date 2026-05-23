@@ -1,7 +1,7 @@
-import "@/app/ui/globals.scss";
-import { type Metadata } from "next";
+import "@/app/ui/globals.css";
+import type { Metadata } from "next";
 import { ViewTransitions } from "next-view-transitions";
-import { type PropsWithChildren, type ReactNode } from "react";
+import type { PropsWithChildren, ReactNode } from "react";
 import { AnalyticsProvider } from "@/analytics/analytics-provider";
 import { ThemeProvider } from "@/app/theme-provider";
 import { sora } from "@/app/ui/fonts";
