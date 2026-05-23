@@ -1,3 +1,9 @@
+# AI
+.claude/*.local.*
+AGENTS.local.md
+AGENTS.override.md
+CLAUDE.local.md
+
 # Build artifacts
 .next
 build
