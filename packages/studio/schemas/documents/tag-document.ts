@@ -1,14 +1,14 @@
-import { defineType } from 'sanity';
+import { defineType } from "sanity";
 
 export const TagDocument = defineType({
-    name: 'tag',
-    title: 'Tags',
-    type: 'document',
-    fields: [
-        {
-            name: 'label',
-            title: 'Label',
-            type: 'string',
-        },
-    ],
+  name: "tag",
+  title: "Tags",
+  type: "document",
+  fields: [
+    {
+      name: "label",
+      title: "Label",
+      type: "string",
+    },
+  ],
 });

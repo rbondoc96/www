@@ -1,7 +1,7 @@
-import { type NextConfig } from 'next';
+import { type NextConfig } from "next";
 
 export default <NextConfig>{
-    experimental: {
-        viewTransition: true,
-    },
+  experimental: {
+    viewTransition: true,
+  },
 };
