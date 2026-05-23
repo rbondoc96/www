@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["eslint", "typescript", "import", "nextjs", "oxc", "promise", "unicorn", "react", "react-perf"],
+  "plugins": ["typescript", "import", "nextjs", "oxc", "promise", "unicorn", "react", "react-perf", "jsx-a11y"],
   "jsPlugins": [
     {
       "name": "react-hooks-js",
@@ -10,8 +10,20 @@
   "categories": {
     "correctness": "error"
   },
+  "ignorePatterns": [
+    "./**/*.scss",
+    "packages/*/node_modules/**",
+    "packages/*/.next/**",
+    "packages/*/dist/**",
+    "packages/studio/.sanity/**"
+  ],
   "rules": {
-    "no-unused-vars": "warn",
+    "eqeqeq": "error",
+
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "import/no-duplicates": "error",
+    "import/no-nodejs-modules": "error",
 
     // React Compiler rules
     "react-hooks-js/component-hook-factories": "error",
@@ -30,8 +42,8 @@
     "react-hooks-js/unsupported-syntax": "error",
     "react-hooks-js/use-memo": "error",
 
-    "typescript/no-empty-object-type": "off",
-    "typescript/no-explicit-any": "off",
+    "react/exhaustive-deps": "warn",
+
     "typescript/no-unused-vars": [
       "warn",
       {
@@ -45,6 +57,14 @@
       }
     ]
   },
+  "overrides": [
+    {
+      "files": ["./packages/web/vitest.config.ts"],
+      "rules": {
+        "import/no-nodejs-modules": "off"
+      }
+    }
+  ],
   "settings": {
     "next": {
       "rootDir": "packages/web/"
