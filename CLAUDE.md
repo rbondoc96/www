@@ -22,13 +22,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **Quality Checks**:
 
-- `pnpm checks` - Run all checks concurrently (TypeScript, ESLint, Prettier)
-- `pnpm stan` - TypeScript type checking (use this for quick type validation)
-- `pnpm lint` - ESLint checks
-- `pnpm lint:fix` - Auto-fix ESLint issues
-- `pnpm format` - Check Prettier formatting
-- `pnpm format:fix` - Auto-fix Prettier formatting
-- `pnpm test` - Run tests with Vitest
+- `pnpm checks` - Run all checks concurrently (types, lint, format)
+- `pnpm lint` - Lint checks
+- `pnpm lint:fix` - Auto-fix lint issues
+- `pnpm format` - Auto-fix format issues
+- `pnpm format:check` - Check formatting
+- `pnpm test` - Run tests
+- `pnpm typecheck` - TypeScript type checking (use this for quick type validation)
 
 ## Architecture
 
