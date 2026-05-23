@@ -1,51 +1,51 @@
 {
-    "include": ["__tests__", "src", "next.config.ts", "next-env.d.ts", ".next/types/**/*.ts"],
-    "exclude": ["node_modules"],
-    "references": [
-        {
-            "path": "./tsconfig.node.json"
-        }
-    ],
-    "compilerOptions": {
-        // Project Environment
-        "jsx": "preserve",
-        "lib": ["ES2020", "DOM", "DOM.Iterable"],
-        "paths": {
-            "@/*": ["./src/*"]
-        },
-        "plugins": [
-            {
-                "name": "typescript-plugin-css-modules"
-            },
-            {
-                "name": "next"
-            }
-        ],
-        // General
-        "allowImportingTsExtensions": false,
-        "moduleResolution": "Bundler",
-        "resolveJsonModule": true,
-        "skipLibCheck": true,
-        // Build
-        "target": "ESNext",
-        "module": "ESNext",
-        "allowSyntheticDefaultImports": true,
-        "esModuleInterop": true,
-        "isolatedModules": true,
-        "outDir": "build",
-        "noEmit": true,
-        "removeComments": true,
-        // Linting
-        "allowJs": false,
-        "forceConsistentCasingInFileNames": true,
-        "useDefineForClassFields": true,
-        "strict": true,
-        "strictNullChecks": true,
-        "noFallthroughCasesInSwitch": true,
-        "noImplicitReturns": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "noUncheckedIndexedAccess": true,
-        "incremental": true
+  "include": ["__tests__", "src", "next.config.ts", "next-env.d.ts", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
     }
+  ],
+  "compilerOptions": {
+    // Project Environment
+    "jsx": "preserve",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      },
+      {
+        "name": "next"
+      }
+    ],
+    // General
+    "allowImportingTsExtensions": false,
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    // Build
+    "target": "ESNext",
+    "module": "ESNext",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "outDir": "build",
+    "noEmit": true,
+    "removeComments": true,
+    // Linting
+    "allowJs": false,
+    "forceConsistentCasingInFileNames": true,
+    "useDefineForClassFields": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noUncheckedIndexedAccess": true,
+    "incremental": true
+  }
 }

@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+env:
+  CI: "true"
+
+jobs:
+  checks:
+    name: ${{ matrix.name }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: format
+            command: pnpm run format:check
+          - name: lint
+            command: pnpm run lint
+          - name: types
+            command: pnpm run typecheck
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ./.github/actions/node_setup
+
+      - name: Run ${{ matrix.name }}
+        run: ${{ matrix.command }}
+
+  test:
+    name: test
+    needs: [checks]
+    runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_POSTHOG_HOST: https://example.com
+      NEXT_PUBLIC_POSTHOG_KEY: not-a-secret
+      NEXT_PUBLIC_RESUME_URL: https://example.com/resume
+      NEXT_PUBLIC_SANITY_PROJECT_ID: 1234project5678
+      NEXT_PUBLIC_SANITY_DATASET: test
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ./.github/actions/node_setup
+
+      - name: Execute web tests
+        run: pnpm run test

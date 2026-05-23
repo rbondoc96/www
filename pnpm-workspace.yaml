@@ -1,2 +1,26 @@
 packages:
-  - 'packages/*'
+  - "packages/*"
+
+# 2 days
+minimumReleaseAge: 2880
+
+catalog:
+  "@types/react": ^19.2.15
+  "@types/react-dom": ^19.2.3
+  react: ^19.2.6
+  react-dom: ^19.2.6
+  sanity: ^4.20.3
+  tailwindcss: ^4.1.4
+  typescript: ^6.0.3
+
+allowBuilds:
+  # Native file watcher used by tooling; build needed for the platform binary.
+  "@parcel/watcher": true
+  # Postinstall is not required at runtime; keep disabled.
+  core-js: false
+  # Bundler package installs/selects its platform binary during build.
+  esbuild: true
+  # Image optimization package needs native/libvips binaries.
+  sharp: true
+  # Native resolver used by lint/tooling; postinstall verifies platform binding.
+  unrs-resolver: true
