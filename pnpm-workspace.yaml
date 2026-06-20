@@ -1,5 +1,6 @@
 packages:
-  - "packages/*"
+  - apps/*
+  - packages/*
 
 # 2 days
 minimumReleaseAge: 2880
