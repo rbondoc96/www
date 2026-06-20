@@ -5,7 +5,7 @@ AGENTS.override.md
 CLAUDE.local.md
 
 # Build artifacts
-.next
+.tanstack
 build
 dist
 

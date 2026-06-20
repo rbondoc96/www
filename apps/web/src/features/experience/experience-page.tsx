@@ -35,7 +35,7 @@ export function ExperiencePage({ timeline }: ExperiencePageProps): ReactNode {
           <TrackedLink
             className="text-center text-xs text-accent underline underline-offset-4 sm:text-sm md:text-base"
             event={TrackedEvent.ResumeView}
-            href={env.NEXT_PUBLIC_RESUME_URL}
+            href={env.VITE_RESUME_URL}
             rel="noreferrer"
             target="_blank"
           >

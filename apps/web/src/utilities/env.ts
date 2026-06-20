@@ -1,11 +1,11 @@
 import { object, parse, pipe, string, url } from "valibot";
 
 const envShape = {
-  NEXT_PUBLIC_POSTHOG_HOST: string(),
-  NEXT_PUBLIC_POSTHOG_KEY: string(),
-  NEXT_PUBLIC_RESUME_URL: pipe(string(), url()),
-  NEXT_PUBLIC_SANITY_DATASET: string(),
-  NEXT_PUBLIC_SANITY_PROJECT_ID: string(),
+  VITE_POSTHOG_HOST: string(),
+  VITE_POSTHOG_KEY: string(),
+  VITE_RESUME_URL: pipe(string(), url()),
+  VITE_SANITY_DATASET: string(),
+  VITE_SANITY_PROJECT_ID: string(),
 };
 
 const PublicEnv = object(envShape);
@@ -19,9 +19,9 @@ function readPublicEnv(key: PublicEnvKey): string | undefined {
 }
 
 export const env = parse(PublicEnv, {
-  NEXT_PUBLIC_POSTHOG_HOST: readPublicEnv("NEXT_PUBLIC_POSTHOG_HOST"),
-  NEXT_PUBLIC_POSTHOG_KEY: readPublicEnv("NEXT_PUBLIC_POSTHOG_KEY"),
-  NEXT_PUBLIC_RESUME_URL: readPublicEnv("NEXT_PUBLIC_RESUME_URL"),
-  NEXT_PUBLIC_SANITY_DATASET: readPublicEnv("NEXT_PUBLIC_SANITY_DATASET"),
-  NEXT_PUBLIC_SANITY_PROJECT_ID: readPublicEnv("NEXT_PUBLIC_SANITY_PROJECT_ID"),
+  VITE_POSTHOG_HOST: readPublicEnv("VITE_POSTHOG_HOST"),
+  VITE_POSTHOG_KEY: readPublicEnv("VITE_POSTHOG_KEY"),
+  VITE_RESUME_URL: readPublicEnv("VITE_RESUME_URL"),
+  VITE_SANITY_DATASET: readPublicEnv("VITE_SANITY_DATASET"),
+  VITE_SANITY_PROJECT_ID: readPublicEnv("VITE_SANITY_PROJECT_ID"),
 });

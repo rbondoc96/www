@@ -3,7 +3,7 @@
   "arrowParens": "always",
   "bracketSameLine": false,
   "bracketSpacing": true,
-  "ignorePatterns": ["**/.next", "**/build", "**/dist", "**/out", "**/meta", "**/next-env.d.ts", "**/routeTree.gen.ts"],
+  "ignorePatterns": ["**/.output", "**/.tanstack", "**/build", "**/dist", "**/out", "**/meta", "**/routeTree.gen.ts"],
   "singleQuote": false,
   "jsxSingleQuote": false,
   "printWidth": 120,
@@ -19,6 +19,6 @@
   },
   "sortTailwindcss": {
     "functions": ["cva", "clsx", "cn"],
-    "stylesheet": "./packages/web/src/app/ui/globals.css"
+    "stylesheet": "./apps/web/src/styles/globals.css"
   }
 }

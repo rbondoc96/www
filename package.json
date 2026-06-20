@@ -8,18 +8,18 @@
   "packageManager": "pnpm@11.2.2",
   "scripts": {
     "build": "pnpm -r build",
-    "build:web": "pnpm --filter @rbondoc/web-start build",
+    "build:web": "pnpm --filter @rbondoc/web build",
     "build:studio": "pnpm --filter @rbondoc/studio build",
     "checks": "concurrently \"pnpm run typecheck\" \"pnpm run lint\" \"pnpm run format:check\" -n stan,lint,format -c red,green,blue",
-    "dev": "pnpm --filter @rbondoc/web-start dev",
+    "dev": "pnpm --filter @rbondoc/web dev",
     "dev:studio": "pnpm --filter @rbondoc/studio dev",
     "format": "oxfmt",
     "format:check": "oxfmt --check",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
     "typecheck": "pnpm -r typecheck",
-    "start": "pnpm --filter @rbondoc/web-start start",
-    "test": "pnpm --filter @rbondoc/web-start test"
+    "start": "pnpm --filter @rbondoc/web start",
+    "test": "pnpm --filter @rbondoc/web test"
   },
   "devDependencies": {
     "concurrently": "^9.0.1",

@@ -44,11 +44,11 @@ jobs:
     needs: [checks]
     runs-on: ubuntu-latest
     env:
-      NEXT_PUBLIC_POSTHOG_HOST: https://example.com
-      NEXT_PUBLIC_POSTHOG_KEY: not-a-secret
-      NEXT_PUBLIC_RESUME_URL: https://example.com/resume
-      NEXT_PUBLIC_SANITY_PROJECT_ID: 1234project5678
-      NEXT_PUBLIC_SANITY_DATASET: test
+      VITE_POSTHOG_HOST: https://example.com
+      VITE_POSTHOG_KEY: not-a-secret
+      VITE_RESUME_URL: https://example.com/resume
+      VITE_SANITY_PROJECT_ID: 1234project5678
+      VITE_SANITY_DATASET: test
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v6

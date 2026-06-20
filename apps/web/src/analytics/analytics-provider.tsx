@@ -28,8 +28,8 @@ function SuspensedPostHogPageView(): ReactNode {
 
 export function AnalyticsProvider({ children }: PropsWithChildren): ReactNode {
   useEffect(() => {
-    posthogJs.init(env.NEXT_PUBLIC_POSTHOG_KEY, {
-      api_host: env.NEXT_PUBLIC_POSTHOG_HOST,
+    posthogJs.init(env.VITE_POSTHOG_KEY, {
+      api_host: env.VITE_POSTHOG_HOST,
       capture_pageview: false,
     });
   }, []);

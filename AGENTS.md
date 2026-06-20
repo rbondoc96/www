@@ -8,8 +8,8 @@
 
 ## Package Roles
 
+- `apps/web/` - Web application
 - `packages/studio/` - Sanity CMS studio
-- `packages/web/` - Next.js application
 
 ## Code Priorities
 
@@ -26,12 +26,3 @@ If a tradeoff is required, choose correctness and robustness over short-term con
 - Duplicate logic across multiple files is a code smell and should be avoided.
 - Don't be afraid to change existing code.
 - Don't take shortcuts by just adding local logic to solve a problem.
-
-## Known Issues
-
-**Font Loading in Development**: If fonts fail to load:
-
-1. Stop dev server
-2. Close all localhost tabs
-3. Delete `.next` directory
-4. Restart dev server

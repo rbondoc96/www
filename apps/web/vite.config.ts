@@ -6,7 +6,6 @@ import { nitro } from "nitro/vite";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  envPrefix: ["NEXT_PUBLIC_", "VITE_"],
   plugins: [
     tailwindcss(),
     tanstackStart({

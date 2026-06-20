@@ -1,5 +1,5 @@
 {
-  "name": "@rbondoc/web-start",
+  "name": "@rbondoc/web",
   "type": "module",
   "private": true,
   "version": "1.0.0",
