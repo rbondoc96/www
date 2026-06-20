@@ -12,6 +12,7 @@
   },
   "ignorePatterns": [
     "./**/*.scss",
+    "apps/*/node_modules/**",
     "packages/*/node_modules/**",
     "packages/*/.next/**",
     "packages/*/dist/**",
@@ -58,6 +59,12 @@
     ]
   },
   "overrides": [
+    {
+      "files": ["./apps/web/**/*.{ts,tsx}"],
+      "rules": {
+        "nextjs/no-head-element": "off"
+      }
+    },
     {
       "files": ["./packages/web/vitest.config.ts"],
       "rules": {

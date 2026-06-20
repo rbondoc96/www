@@ -3,7 +3,7 @@
   "arrowParens": "always",
   "bracketSameLine": false,
   "bracketSpacing": true,
-  "ignorePatterns": ["**/.next", "**/build", "**/dist", "**/out", "**/meta", "**/next-env.d.ts"],
+  "ignorePatterns": ["**/.next", "**/build", "**/dist", "**/out", "**/meta", "**/next-env.d.ts", "**/routeTree.gen.ts"],
   "singleQuote": false,
   "jsxSingleQuote": false,
   "printWidth": 120,
