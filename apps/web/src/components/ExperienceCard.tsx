@@ -2,7 +2,7 @@
 
 import { type PropsWithChildren, type ReactNode } from "react";
 import { Link } from "@/components/Link.tsx";
-import { Badge } from "@/components/ui/Badge.tsx";
+import { Badge } from "@/components/ui/badge.tsx";
 import { Card, CardContent } from "@/components/ui/card.tsx";
 import { cn } from "@/utilities/cn.ts";
 
