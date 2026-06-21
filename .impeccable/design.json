@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-20T00:00:00.000Z",
+  "title": "Design System: Rodrigo Bondoc",
+  "extensions": {
+    "colorMeta": {
+      "forest-pine": {
+        "role": "primary",
+        "displayName": "Forest Pine",
+        "canonical": "oklch(0.52 0.13 152)",
+        "tonalRamp": [
+          "oklch(0.20 0.07 152)",
+          "oklch(0.30 0.10 152)",
+          "oklch(0.40 0.12 152)",
+          "oklch(0.52 0.13 152)",
+          "oklch(0.62 0.14 152)",
+          "oklch(0.74 0.15 152)",
+          "oklch(0.85 0.11 152)",
+          "oklch(0.94 0.05 152)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(0.195 0.044 264.6)",
+        "tonalRamp": [
+          "oklch(0.15 0.044 264.6)",
+          "oklch(0.195 0.044 264.6)",
+          "oklch(0.30 0.04 264.6)",
+          "oklch(0.44 0.04 262.2)",
+          "oklch(0.58 0.03 262)",
+          "oklch(0.72 0.02 260)",
+          "oklch(0.86 0.012 260)",
+          "oklch(0.965 0.012 259.7)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "oklch(1 0 0)",
+        "tonalRamp": [
+          "oklch(0.18 0.03 264.6)",
+          "oklch(0.30 0.02 264)",
+          "oklch(0.50 0.015 262)",
+          "oklch(0.70 0.012 260)",
+          "oklch(0.86 0.012 260)",
+          "oklch(0.94 0.008 260)",
+          "oklch(0.98 0.004 260)",
+          "oklch(1 0 0)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The name as hero and page titles. Fraunces, optical sizing auto."
+      },
+      "headline": { "displayName": "Headline", "purpose": "Timeline company names and serif section headings." },
+      "body": { "displayName": "Body", "purpose": "Prose and descriptions in Sora; cap at 65–75ch." },
+      "label": { "displayName": "Label", "purpose": "Inline metadata — tag lists, dates, footer." }
+    },
+    "shadows": [
+      {
+        "name": "card-rest",
+        "value": "0 1px 2px rgba(0,0,0,0.05)",
+        "purpose": "The single soft ambient shadow on cards. Flat everywhere else."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-quart",
+        "value": "cubic-bezier(0.165, 0.84, 0.44, 1)",
+        "purpose": "Quiet load entrance (enter-rise) and exponential ease-outs."
+      },
+      {
+        "name": "view-transition",
+        "value": "180ms ease-out",
+        "purpose": "Root route cross-fade; site-logo wordmark morph at 220ms."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Timeline Item",
+      "kind": "custom",
+      "refersTo": "card",
+      "description": "Signature Experience pattern: forest-green spine with solid nodes, Fraunces company header, Sora roles, muted inline tags.",
+      "html": "<ol class=\"ds-timeline\"><li class=\"ds-timeline-item\"><span class=\"ds-timeline-node\" aria-hidden=\"true\"></span><a class=\"ds-timeline-company\" href=\"#\">Sourcetoad<svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 17 17 7\"/><path d=\"M7 7h10v10\"/></svg></a><div class=\"ds-timeline-role\"><span class=\"ds-role-title\">Senior Software Engineer</span><span class=\"ds-role-period\">May 2025 – Present</span></div><p class=\"ds-timeline-desc\">Build and maintain responsive web and mobile apps for clients across industries.</p><p class=\"ds-timeline-tags\">TypeScript  ·  React  ·  PHP  ·  Laravel</p></li></ol>",
+      "css": ".ds-timeline { list-style: none; margin: 0; padding: 0; font-family: var(--font-sora, 'Sora Variable', sans-serif); color: var(--foreground); } .ds-timeline-item { position: relative; border-left: 1px solid color-mix(in oklch, var(--accent) 30%, transparent); padding-left: 2rem; padding-bottom: 3.5rem; } .ds-timeline-node { position: absolute; top: 0.375rem; left: -6px; height: 0.75rem; width: 0.75rem; border-radius: 9999px; background: var(--accent); box-shadow: 0 0 0 4px var(--background); } .ds-timeline-company { display: inline-flex; align-items: baseline; gap: 0.375rem; font-family: var(--font-fraunces, 'Fraunces Variable', serif); font-weight: 500; font-size: 1.875rem; letter-spacing: -0.02em; color: var(--foreground); text-decoration: none; transition: color 0.3s; } .ds-timeline-company svg { color: var(--muted-foreground); transition: transform 0.3s, color 0.3s; } .ds-timeline-company:hover { color: var(--accent); } .ds-timeline-company:hover svg { color: var(--accent); transform: translate(2px, -2px); } .ds-timeline-role { display: flex; flex-direction: column; margin-top: 1.25rem; } .ds-role-title { font-weight: 500; font-size: 1.125rem; } .ds-role-period { font-size: 0.875rem; color: var(--muted-foreground); } .ds-timeline-desc { margin-top: 1.25rem; max-width: 65ch; font-size: 0.875rem; line-height: 1.625; color: var(--muted-foreground); } .ds-timeline-tags { margin-top: 1.25rem; font-size: 0.75rem; letter-spacing: 0.025em; color: var(--muted-foreground); }"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Sora label-size navigation link; underlines on hover, greens on the accent variant.",
+      "html": "<a class=\"ds-nav-link\" href=\"#\">Experience</a>",
+      "css": ".ds-nav-link { font-family: var(--font-sora, 'Sora Variable', sans-serif); font-size: 0.875rem; color: var(--foreground); text-decoration: none; transition: color 0.2s; } .ds-nav-link:hover { text-decoration: underline; text-underline-offset: 4px; } .ds-nav-link:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; border-radius: 2px; }"
+    },
+    {
+      "name": "Text Button",
+      "kind": "button",
+      "refersTo": "text-button",
+      "description": "The default quiet control: ink text, no fill, hover underline.",
+      "html": "<button class=\"ds-btn-text\">View project</button>",
+      "css": ".ds-btn-text { font-family: var(--font-sora, 'Sora Variable', sans-serif); font-size: 1rem; color: var(--foreground); background: none; border: none; border-radius: var(--radius-md, 8px); padding: 0; cursor: pointer; transition: color 0.2s; } .ds-btn-text:hover { text-decoration: underline; text-decoration-thickness: 1px; } .ds-btn-text:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Flat-at-rest container: paper surface, 1px hairline, 14px radius, single soft shadow.",
+      "html": "<div class=\"ds-card\"><h3 class=\"ds-card-title\">Project</h3><p class=\"ds-card-desc\">A short, restful description in Sora.</p></div>",
+      "css": ".ds-card { background: var(--card); color: var(--card-foreground); border: 1px solid var(--border); border-radius: var(--radius-xl, 14px); box-shadow: 0 1px 2px rgba(0,0,0,0.05); padding: 24px; font-family: var(--font-sora, 'Sora Variable', sans-serif); } .ds-card-title { margin: 0 0 0.5rem; font-weight: 600; letter-spacing: -0.01em; } .ds-card-desc { margin: 0; font-size: 0.875rem; color: var(--muted-foreground); }"
+    },
+    {
+      "name": "Badge (Accent)",
+      "kind": "chip",
+      "refersTo": "badge-accent",
+      "description": "Rare emphasis chip only — Forest Pine fill. Never used in rows; default tags are inline text.",
+      "html": "<span class=\"ds-badge-accent\">Featured</span>",
+      "css": ".ds-badge-accent { display: inline-flex; align-items: center; background: var(--accent); color: var(--accent-foreground); border-radius: var(--radius-md, 8px); padding: 2px 10px; font-family: var(--font-sora, 'Sora Variable', sans-serif); font-size: 0.75rem; font-weight: 600; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Composed Page",
+    "overview": "A personal site treated like a well-set magazine page: Fraunces carries the headline voice, Sora handles the reading, and everything else gets out of the way. The register is brand — design is the product — but the personality is precise, understated, and crafted. Confidence comes from restraint and the quality of type and spacing, not from volume. A single forest-green accent is the only color with a voice; the rest is ink on paper. Density is low and deliberate; whitespace is structural. It rejects the generic AI-portfolio look, clutter, corporate sterility, and over-animated gimmickry.",
+    "keyCharacteristics": [
+      "Editorial, type-led, calm — Fraunces display over Sora body.",
+      "Ink-and-paper neutrals with one forest-green accent used as punctuation/structure.",
+      "Low density, generous and intentional whitespace.",
+      "Quiet, purposeful motion with a reduced-motion path.",
+      "Light and dark themes, contrast verified in both (WCAG 2.2 AA)."
+    ],
+    "rules": [
+      {
+        "name": "The Punctuation Rule",
+        "body": "Forest Pine is structure and accent, never a fill. It may color a 1px spine, a node, an icon, a focus ring, or a hover — never a row of chips or a block of content. Its scarcity is the point.",
+        "section": "colors"
+      },
+      {
+        "name": "The True-Neutral Rule",
+        "body": "Paper is white at chroma 0 and ink is a near-black blue. Never warm the background toward cream/sand/parchment.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two-Voice Rule",
+        "body": "Fraunces speaks (names, titles); Sora reads (everything else). Don't set body in the serif or headlines in the sans.",
+        "section": "typography"
+      },
+      {
+        "name": "The No-Eyebrow Rule",
+        "body": "No tiny tracked-uppercase kicker above sections. Hierarchy comes from serif/sans contrast and size.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "Surfaces are flat at rest. Reach for a tonal step or a 1px hairline before a shadow. Never pair a 1px border with a wide soft drop shadow.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep Forest Pine to punctuation and structure (spine, node, icon, focus, hover).",
+      "Do keep the page true ink-on-paper; white at chroma 0, blue-black ink.",
+      "Do set names and titles in Fraunces, everything readable in Sora.",
+      "Do render tag/metadata lists as middot-separated Muted Ink text.",
+      "Do verify body text ≥4.5:1 (large ≥3:1) in both themes, and give every animation a prefers-reduced-motion alternative.",
+      "Do cap card radius at 14px and keep surfaces flat at rest."
+    ],
+    "donts": [
+      "Don't ship the generic AI-portfolio look: cream/sand backgrounds, tracked-uppercase eyebrows, identical icon-heading-text card grids, or hero-metric blocks.",
+      "Don't let the page get cluttered or maximalist — remove before you add.",
+      "Don't feel corporate or sterile; keep a point of view.",
+      "Don't over-animate: no scroll-jacking, no gratuitous or gimmicky motion.",
+      "Don't flood the accent as fills — no rows of green pills (the original salmon-pill mistake, now forbidden in any hue).",
+      "Don't pair a 1px border with a wide soft drop shadow on the same element.",
+      "Don't exceed -0.02em tracking on the serif display, or round cards past 16px."
+    ]
+  }
+}

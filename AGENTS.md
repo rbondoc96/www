@@ -34,7 +34,8 @@ If a tradeoff is required, choose correctness and robustness over short-term con
   Read it before any UI/design work.
 - **Register:** brand — this is a personal site/portfolio where design is the product.
 - **Personality:** precise, understated, crafted; emotional target is calm & refined.
-- **In progress:** redesigning away from the current Orbitron sci-fi direction toward
-  calm refinement (keep precision, shed loudness). The token architecture (OKLCH,
-  dark/light) and Sora body are worth keeping; the visual direction is being reset.
+- **Visual system:** Fraunces (variable serif) for display via `--font-fraunces`, Sora
+  for body. Restrained color on OKLCH tokens (dark/light); the accent is a forest green
+  (`--accent`, hue ~152) used as punctuation/structure (timeline spine + nodes, link
+  hover, focus), never as a field. Moved off the prior Orbitron sci-fi direction.
 - **A11y bar:** WCAG 2.2 AA, with extra care on reduced-motion.
