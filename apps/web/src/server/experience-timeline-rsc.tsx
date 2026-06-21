@@ -1,6 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 import { renderServerComponent } from "@tanstack/react-start/rsc";
-import { Timeline } from "@/features/experience/timeline.tsx";
+import { Timeline } from "@/features/experience/Timeline.tsx";
 import { listExperiences } from "@/lib/experiences.ts";
 
 export const getExperienceTimelineRenderable = createServerFn().handler(async () => {

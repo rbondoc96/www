@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { type ReactNode } from "react";
-import { ExperiencePage } from "@/features/experience/experience-page.tsx";
+import { ExperiencePage } from "@/features/experience/ExperiencePage.tsx";
 import { getExperienceTimelineRenderable } from "@/server/experience-timeline-rsc.tsx";
 
 export const Route = createFileRoute("/experience")({

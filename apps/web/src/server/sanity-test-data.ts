@@ -1,4 +1,4 @@
-import { type SanityTestData } from "@/features/sanity/sanity-test.tsx";
+import { type SanityTestData } from "@/features/sanity/SanityTest.tsx";
 import { listExperiences } from "@/lib/experiences.ts";
 import { testSanityConnection } from "@/lib/sanity.ts";
 

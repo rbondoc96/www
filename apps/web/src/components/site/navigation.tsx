@@ -1,7 +1,7 @@
 import { MenuIcon } from "lucide-react";
 import { type ReactNode } from "react";
-import { Link } from "@/components/link.tsx";
-import { ThemeSwitch } from "@/components/theme/theme-provider.tsx";
+import { Link } from "@/components/Link.tsx";
+import { ThemeSwitch } from "@/components/theme/ThemeProvider";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet.tsx";
 import { orbitron } from "@/styles/fonts.ts";
 import { cn } from "@/utilities/cn.ts";

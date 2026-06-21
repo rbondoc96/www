@@ -1,6 +1,6 @@
 import { type ReactNode } from "react";
 import { SiteNavigation } from "@/components/site/navigation.tsx";
-import { ThemeSwitch } from "@/components/theme/theme-provider.tsx";
+import { ThemeSwitch } from "@/components/theme/ThemeProvider";
 import { orbitron } from "@/styles/fonts.ts";
 
 type HomePageProps = {

@@ -1,9 +1,9 @@
 import "@/styles/globals.css";
 import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-router";
 import { type ReactNode } from "react";
-import { AnalyticsProvider } from "@/analytics/analytics-provider.tsx";
-import { ThemeProvider } from "@/components/theme/theme-provider.tsx";
-import { ThemeScript } from "@/components/theme/theme-script.tsx";
+import { AnalyticsProvider } from "@/analytics/AnalyticsProvider.tsx";
+import { ThemeProvider } from "@/components/theme/ThemeProvider.tsx";
+import { ThemeScript } from "@/components/theme/ThemeScript.tsx";
 import { sora } from "@/styles/fonts.ts";
 import { cn } from "@/utilities/cn.ts";
 

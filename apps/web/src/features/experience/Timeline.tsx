@@ -1,6 +1,6 @@
 import { ArrowUpRightIcon } from "lucide-react";
 import { type ReactNode } from "react";
-import { Badge } from "@/components/ui/badge.tsx";
+import { Badge } from "@/components/ui/Badge.tsx";
 import { type Experience } from "@/lib/experiences.ts";
 
 type TimelineItemProps = {

@@ -3,8 +3,8 @@
 import { type CaptureOptions, type Properties } from "posthog-js";
 import { usePostHog } from "posthog-js/react";
 import { type ReactNode } from "react";
-import type { TrackedEvent } from "@/analytics/tracked-event.ts";
-import { Link, type LinkProps } from "@/components/link.tsx";
+import type { TrackedEvent } from "@/analytics/TrackedEvent.ts";
+import { Link, type LinkProps } from "@/components/Link.tsx";
 
 interface Props extends Omit<LinkProps, "href" | "onClick" | "to"> {
   event: TrackedEvent;

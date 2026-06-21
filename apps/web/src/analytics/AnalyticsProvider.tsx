@@ -4,7 +4,7 @@ import { useRouterState } from "@tanstack/react-router";
 import posthogJs from "posthog-js";
 import { PostHogProvider, usePostHog } from "posthog-js/react";
 import { type PropsWithChildren, type ReactNode, Suspense, useEffect } from "react";
-import { TrackedEvent } from "@/analytics/tracked-event.ts";
+import { TrackedEvent } from "@/analytics/TrackedEvent.ts";
 import { env } from "@/utilities/env.ts";
 
 function PostHogPageView(): ReactNode {

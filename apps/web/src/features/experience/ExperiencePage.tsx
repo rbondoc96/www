@@ -1,8 +1,8 @@
 import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 import { type ReactNode } from "react";
-import { TrackedEvent } from "@/analytics/tracked-event.ts";
-import { TrackedLink } from "@/analytics/tracked-link.tsx";
-import { IconButton } from "@/components/buttons/icon-button.tsx";
+import { TrackedEvent } from "@/analytics/TrackedEvent.ts";
+import { TrackedLink } from "@/analytics/TrackedLink.tsx";
+import { IconButton } from "@/components/buttons/IconButton.tsx";
 import { HeaderNavigation } from "@/components/site/navigation.tsx";
 import { orbitron } from "@/styles/fonts.ts";
 import { cn } from "@/utilities/cn.ts";

@@ -1,8 +1,8 @@
 "use client";
 
 import { type PropsWithChildren, type ReactNode } from "react";
-import { Link } from "@/components/link.tsx";
-import { Badge } from "@/components/ui/badge.tsx";
+import { Link } from "@/components/Link.tsx";
+import { Badge } from "@/components/ui/Badge.tsx";
 import { Card, CardContent } from "@/components/ui/card.tsx";
 import { cn } from "@/utilities/cn.ts";
 
