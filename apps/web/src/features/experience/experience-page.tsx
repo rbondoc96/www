@@ -6,7 +6,6 @@ import { IconButton } from "@/components/buttons/icon-button";
 import { HeaderNavigation } from "@/components/site/navigation";
 import { orbitron } from "@/styles/fonts";
 import { cn } from "@/utilities/cn";
-import { env } from "@/utilities/env";
 
 type ExperiencePageProps = {
   timeline: ReactNode;
@@ -30,18 +29,6 @@ export function ExperiencePage({ timeline }: ExperiencePageProps): ReactNode {
         </h1>
 
         <p className="text-center text-lg font-light sm:text-xl md:text-2xl">Software Engineer</p>
-
-        <div className="flex justify-center">
-          <TrackedLink
-            className="text-center text-xs text-accent underline underline-offset-4 sm:text-sm md:text-base"
-            event={TrackedEvent.ResumeView}
-            href={env.VITE_RESUME_URL}
-            rel="noreferrer"
-            target="_blank"
-          >
-            View My Resumé
-          </TrackedLink>
-        </div>
 
         <div>
           <div className="flex justify-center">
