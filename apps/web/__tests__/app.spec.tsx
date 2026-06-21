@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 import { describe, it } from "vitest";
-import { HomePage } from "@/features/home/home-page";
+import { HomePage } from "@/features/home/home-page.tsx";
 
 describe("/", () => {
   it("renders the home page", () => {

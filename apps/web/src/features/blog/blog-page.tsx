@@ -1,5 +1,5 @@
 import { type ReactNode } from "react";
-import { HeaderNavigation } from "@/components/site/navigation";
+import { HeaderNavigation } from "@/components/site/navigation.tsx";
 
 export function BlogPage(): ReactNode {
   return (

@@ -9,11 +9,13 @@
       "@/*": ["./src/*"]
     },
     "types": ["node", "vite/client"],
+
     // General
-    "allowImportingTsExtensions": false,
-    "moduleResolution": "Bundler",
+    "allowImportingTsExtensions": true,
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "skipLibCheck": true,
+
     // Build
     "target": "ESNext",
     "module": "ESNext",
@@ -23,6 +25,7 @@
     "outDir": "build",
     "noEmit": true,
     "removeComments": true,
+
     // Linting
     "allowJs": false,
     "forceConsistentCasingInFileNames": true,

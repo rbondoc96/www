@@ -1,6 +1,6 @@
 import { Slot } from "@radix-ui/react-slot";
 import { forwardRef } from "react";
-import { BaseButton, type BaseButtonProps } from "@/components/buttons/base-button";
+import { BaseButton, type BaseButtonProps } from "@/components/buttons/base-button.tsx";
 
 type SolidButtonProps = BaseButtonProps & {
   asChild?: boolean;

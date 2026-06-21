@@ -1,10 +1,10 @@
 import { MenuIcon } from "lucide-react";
 import { type ReactNode } from "react";
-import { Link } from "@/components/link";
-import { ThemeSwitch } from "@/components/theme/theme-provider";
-import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { orbitron } from "@/styles/fonts";
-import { cn } from "@/utilities/cn";
+import { Link } from "@/components/link.tsx";
+import { ThemeSwitch } from "@/components/theme/theme-provider.tsx";
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet.tsx";
+import { orbitron } from "@/styles/fonts.ts";
+import { cn } from "@/utilities/cn.ts";
 
 export function HeaderNavigation(): ReactNode {
   return (

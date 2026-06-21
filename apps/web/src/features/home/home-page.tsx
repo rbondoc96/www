@@ -1,7 +1,7 @@
 import { type ReactNode } from "react";
-import { SiteNavigation } from "@/components/site/navigation";
-import { ThemeSwitch } from "@/components/theme/theme-provider";
-import { orbitron } from "@/styles/fonts";
+import { SiteNavigation } from "@/components/site/navigation.tsx";
+import { ThemeSwitch } from "@/components/theme/theme-provider.tsx";
+import { orbitron } from "@/styles/fonts.ts";
 
 type HomePageProps = {
   sanityTest?: ReactNode;

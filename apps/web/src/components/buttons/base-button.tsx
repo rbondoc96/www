@@ -1,6 +1,6 @@
 import { UpdateIcon } from "@radix-ui/react-icons";
 import { forwardRef, type JSX } from "react";
-import { cn } from "@/utilities/cn";
+import { cn } from "@/utilities/cn.ts";
 
 type HtmlButtonProps = JSX.IntrinsicElements["button"];
 type PickedProps = Omit<HtmlButtonProps, "type">;

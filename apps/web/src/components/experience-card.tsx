@@ -1,10 +1,10 @@
 "use client";
 
 import { type PropsWithChildren, type ReactNode } from "react";
-import { Link } from "@/components/link";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
-import { cn } from "@/utilities/cn";
+import { Link } from "@/components/link.tsx";
+import { Badge } from "@/components/ui/badge.tsx";
+import { Card, CardContent } from "@/components/ui/card.tsx";
+import { cn } from "@/utilities/cn.ts";
 
 type Props = PropsWithChildren<{
   company: string;

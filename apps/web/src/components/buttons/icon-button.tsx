@@ -3,8 +3,8 @@
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 import { forwardRef } from "react";
-import { BaseButton, type BaseButtonProps } from "@/components/buttons/base-button";
-import { cn } from "@/utilities/cn";
+import { BaseButton, type BaseButtonProps } from "@/components/buttons/base-button.tsx";
+import { cn } from "@/utilities/cn.ts";
 
 const styles = cva(
   [

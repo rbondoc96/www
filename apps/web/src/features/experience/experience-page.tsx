@@ -1,11 +1,11 @@
 import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 import { type ReactNode } from "react";
-import { TrackedEvent } from "@/analytics/tracked-event";
-import { TrackedLink } from "@/analytics/tracked-link";
-import { IconButton } from "@/components/buttons/icon-button";
-import { HeaderNavigation } from "@/components/site/navigation";
-import { orbitron } from "@/styles/fonts";
-import { cn } from "@/utilities/cn";
+import { TrackedEvent } from "@/analytics/tracked-event.ts";
+import { TrackedLink } from "@/analytics/tracked-link.tsx";
+import { IconButton } from "@/components/buttons/icon-button.tsx";
+import { HeaderNavigation } from "@/components/site/navigation.tsx";
+import { orbitron } from "@/styles/fonts.ts";
+import { cn } from "@/utilities/cn.ts";
 
 type ExperiencePageProps = {
   timeline: ReactNode;

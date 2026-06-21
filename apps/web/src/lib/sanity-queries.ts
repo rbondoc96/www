@@ -1,4 +1,4 @@
-import { sanity } from "./sanity";
+import { sanity } from "./sanity.ts";
 
 // GROQ queries for your content
 export const POSTS_QUERY = `*[_type == "post"] | order(_createdAt desc) {

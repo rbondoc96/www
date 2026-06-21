@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { type ReactNode } from "react";
-import { HomePage } from "@/features/home/home-page";
-import { getSanityTestRenderable } from "@/server/sanity-test-rsc";
+import { HomePage } from "@/features/home/home-page.tsx";
+import { getSanityTestRenderable } from "@/server/sanity-test-rsc.tsx";
 
 export const Route = createFileRoute("/")({
   component: HomeRoute,
