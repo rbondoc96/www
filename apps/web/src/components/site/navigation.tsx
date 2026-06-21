@@ -3,7 +3,7 @@ import { type ReactNode } from "react";
 import { Link } from "@/components/Link.tsx";
 import { ThemeSwitch } from "@/components/theme/ThemeProvider";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet.tsx";
-import { newsreader } from "@/styles/fonts.ts";
+import { fraunces } from "@/styles/fonts.ts";
 import { cn } from "@/utilities/cn.ts";
 
 export function HeaderNavigation(): ReactNode {
@@ -21,8 +21,8 @@ export function HeaderNavigation(): ReactNode {
         <div className="flex justify-center">
           <Link
             className={cn(
-              newsreader.className,
-              "text-center text-lg font-normal tracking-[-0.01em] md:text-xl",
+              fraunces.className,
+              "text-center text-lg font-medium tracking-[-0.01em] md:text-xl",
               "hidden whitespace-nowrap sm:inline",
               "[view-transition-name:site-logo]",
             )}
@@ -43,7 +43,7 @@ export function MobileSiteNavigation(): ReactNode {
       <SheetTrigger>
         <MenuIcon className="h-6 w-6" />
       </SheetTrigger>
-      <SheetContent side="top">
+      <SheetContent aria-describedby={undefined} side="top">
         <SheetTitle className="sr-only">Navigation</SheetTitle>
         <div className="flex flex-col gap-y-4 text-sm">
           <Link to="/" underline>

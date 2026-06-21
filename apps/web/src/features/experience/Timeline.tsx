@@ -1,7 +1,8 @@
 import { ArrowUpRightIcon } from "lucide-react";
 import { type ReactNode } from "react";
-import { Badge } from "@/components/ui/badge.tsx";
 import { type Experience } from "@/lib/experiences.ts";
+import { fraunces } from "@/styles/fonts.ts";
+import { cn } from "@/utilities/cn.ts";
 
 type TimelineItemProps = {
   experience: Experience;
@@ -9,55 +10,48 @@ type TimelineItemProps = {
 
 function TimelineItem({ experience }: TimelineItemProps): ReactNode {
   return (
-    <div className="grid grid-cols-2">
-      <div className="mt-2 hidden sm:block">
-        <a
-          className="group relative inline-flex text-3xl tracking-tight transition-colors duration-400 hover:text-accent md:text-4xl lg:text-5xl"
-          href={experience.url}
-          rel="noreferrer"
-          target="_blank"
-        >
+    <li className="relative border-l border-accent/30 pb-14 pl-8 last:border-transparent last:pb-0">
+      {/* Node on the green spine */}
+      <span
+        aria-hidden
+        className="absolute top-1.5 -left-[6px] h-3 w-3 rounded-full bg-accent ring-4 ring-background"
+      />
+
+      <a
+        className="group inline-flex items-baseline gap-1.5 transition-colors duration-300 hover:text-accent"
+        href={experience.url}
+        rel="noreferrer"
+        target="_blank"
+      >
+        <span className={cn(fraunces.className, "text-2xl font-medium tracking-[-0.02em] md:text-3xl")}>
           {experience.company_name}
-          <ArrowUpRightIcon className="absolute top-1/3 -right-8 transition-transform group-hover:translate-x-1/4 group-hover:-translate-y-1/2" />
-        </a>
+        </span>
+        <ArrowUpRightIcon className="h-4 w-4 text-muted-foreground transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-accent md:h-5 md:w-5" />
+      </a>
+
+      <div className="mt-5 flex flex-col gap-y-3">
+        {experience.titles.map((title, index) => (
+          <div key={index} className="flex flex-col">
+            <span className="font-medium md:text-lg">{title.title}</span>
+            <span className="text-sm text-muted-foreground">{title.period}</span>
+          </div>
+        ))}
       </div>
-      <div className="relative col-span-2 ml-4 flex flex-col gap-y-4 border-l border-zinc-700 pl-8 sm:col-span-1 sm:ml-0">
-        <div className="absolute top-0 left-0 h-5 w-5 -translate-x-1/2 rounded-full bg-black dark:bg-white" />
-        <div className="sm:hidden">
-          <a
-            className="group relative inline-flex text-xl tracking-tight transition-colors duration-400 hover:text-accent sm:hidden"
-            href={experience.url}
-            rel="noreferrer"
-            target="_blank"
-          >
-            {experience.url}
-            <ArrowUpRightIcon className="absolute top-1/3 -right-5 h-4 w-4 transition-transform group-hover:translate-x-1/5 group-hover:-translate-y-1/3" />
-          </a>
-        </div>
-        <div className="mt-2">
-          {experience.titles.map((title, index) => (
-            <div key={index} className="mb-4 flex flex-col gap-y-1">
-              <span className="font-medium sm:text-lg md:text-xl">{title.title}</span>
-              <span className="text-xs text-zinc-400 sm:text-sm">{title.period}</span>
-            </div>
-          ))}
-        </div>
-        <div>
-          {experience.description.map((text, index) => (
-            <p key={index} className="mb-4 text-xs leading-normal font-light sm:text-sm">
-              {text}
-            </p>
-          ))}
-        </div>
-        <div className="flex flex-wrap gap-x-2 gap-y-2 pb-20">
-          {experience.tags.map((tag, index) => (
-            <Badge key={index} variant="accent">
-              {tag}
-            </Badge>
-          ))}
-        </div>
+
+      <div className="mt-5 flex flex-col gap-y-3">
+        {experience.description.map((text, index) => (
+          <p key={index} className="max-w-prose text-sm leading-relaxed text-muted-foreground">
+            {text}
+          </p>
+        ))}
       </div>
-    </div>
+
+      {experience.tags.length > 0 && (
+        <p className="mt-5 text-xs leading-relaxed tracking-wide text-muted-foreground">
+          {experience.tags.join("  ·  ")}
+        </p>
+      )}
+    </li>
   );
 }
 
@@ -69,10 +63,10 @@ type TimelineProps = {
 
 export function Timeline({ experiences }: TimelineProps): ReactNode {
   return (
-    <div className="mt-4">
+    <ol className="mt-4">
       {experiences.map((experience, index) => (
         <TimelineItem key={index} experience={experience} />
       ))}
-    </div>
+    </ol>
   );
 }

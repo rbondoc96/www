@@ -1,7 +1,7 @@
 import { type CSSProperties, type ReactNode } from "react";
 import { SiteNavigation } from "@/components/site/navigation.tsx";
 import { ThemeSwitch } from "@/components/theme/ThemeProvider";
-import { newsreader } from "@/styles/fonts.ts";
+import { fraunces } from "@/styles/fonts.ts";
 import { cn } from "@/utilities/cn.ts";
 
 type HomePageProps = {
@@ -10,7 +10,7 @@ type HomePageProps = {
 
 const delay = (ms: number): CSSProperties => ({ animationDelay: `${ms}ms` });
 
-export function HomePage({ sanityTest = null }: HomePageProps): ReactNode {
+export function HomePage({ sanityTest: _sanityTest = null }: HomePageProps): ReactNode {
   return (
     <>
       <header>
@@ -22,8 +22,8 @@ export function HomePage({ sanityTest = null }: HomePageProps): ReactNode {
         <div className="mb-12 flex flex-1 flex-col items-center justify-center gap-5">
           <h1
             className={cn(
-              newsreader.className,
-              "animate-enter-rise text-center font-normal tracking-[-0.01em] text-balance",
+              fraunces.className,
+              "animate-enter-rise text-center font-medium tracking-[-0.02em] text-balance",
               "text-[clamp(2.75rem,7vw,5rem)] leading-[1.05]",
               "[view-transition-name:site-logo]",
             )}
@@ -40,7 +40,7 @@ export function HomePage({ sanityTest = null }: HomePageProps): ReactNode {
           <div className="animate-enter-rise" style={delay(180)}>
             <SiteNavigation />
           </div>
-          {sanityTest}
+          {/* {sanityTest} */}
         </div>
       </main>
     </>

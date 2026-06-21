@@ -1,5 +1,5 @@
-export const newsreader = {
-  className: "font-newsreader",
+export const fraunces = {
+  className: "font-fraunces",
 } as const;
 
 export const sora = {
