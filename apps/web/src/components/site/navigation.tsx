@@ -3,7 +3,7 @@ import { type ReactNode } from "react";
 import { Link } from "@/components/Link.tsx";
 import { ThemeSwitch } from "@/components/theme/ThemeProvider";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet.tsx";
-import { orbitron } from "@/styles/fonts.ts";
+import { newsreader } from "@/styles/fonts.ts";
 import { cn } from "@/utilities/cn.ts";
 
 export function HeaderNavigation(): ReactNode {
@@ -21,14 +21,14 @@ export function HeaderNavigation(): ReactNode {
         <div className="flex justify-center">
           <Link
             className={cn(
-              orbitron.className,
-              "text-center text-xl font-semibold md:text-2xl",
-              "hidden sm:inline",
+              newsreader.className,
+              "text-center text-lg font-normal tracking-[-0.01em] md:text-xl",
+              "hidden whitespace-nowrap sm:inline",
               "[view-transition-name:site-logo]",
             )}
             to="/"
           >
-            RDB
+            Rodrigo Bondoc
           </Link>
         </div>
         <ThemeSwitch className="flex justify-end" />

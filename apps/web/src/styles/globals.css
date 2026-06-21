@@ -1,6 +1,6 @@
 @import "tailwindcss" source("../../");
 
-@import "@fontsource-variable/orbitron";
+@import "@fontsource-variable/newsreader";
 @import "@fontsource-variable/sora";
 
 @plugin "tailwindcss-animate";
@@ -111,7 +111,7 @@
 }
 
 @theme inline {
-  --font-orbitron: "Orbitron Variable", sans-serif;
+  --font-newsreader: "Newsreader Variable", serif;
   --font-sora: "Sora Variable", sans-serif;
 
   --color-background: var(--background);
@@ -151,6 +151,28 @@
     font-feature-settings:
       "rlig" 1,
       "calt" 1;
+  }
+}
+
+@keyframes enter-rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Quiet load entrance. Resting state is fully visible; stagger via inline delay. */
+.animate-enter-rise {
+  animation: enter-rise 620ms cubic-bezier(0.165, 0.84, 0.44, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-enter-rise {
+    animation: none;
   }
 }
 

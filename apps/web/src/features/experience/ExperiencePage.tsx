@@ -4,7 +4,7 @@ import { TrackedEvent } from "@/analytics/TrackedEvent.ts";
 import { TrackedLink } from "@/analytics/TrackedLink.tsx";
 import { IconButton } from "@/components/buttons/IconButton.tsx";
 import { HeaderNavigation } from "@/components/site/navigation.tsx";
-import { orbitron } from "@/styles/fonts.ts";
+import { newsreader } from "@/styles/fonts.ts";
 import { cn } from "@/utilities/cn.ts";
 
 type ExperiencePageProps = {
@@ -18,10 +18,10 @@ export function ExperiencePage({ timeline }: ExperiencePageProps): ReactNode {
       <main className="mb-12 flex flex-1 flex-col gap-6 md:mt-6 md:gap-8 lg:mt-8">
         <h1
           className={cn(
-            orbitron.className,
-            "font-semibold tracking-tight",
+            newsreader.className,
+            "font-normal tracking-[-0.01em]",
             "text-3xl md:text-5xl lg:text-7xl",
-            "text-center font-semibold",
+            "text-center",
             "mt-8",
           )}
         >

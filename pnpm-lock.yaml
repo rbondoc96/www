@@ -47,9 +47,9 @@ importers:
 
   apps/web:
     dependencies:
-      '@fontsource-variable/orbitron':
-        specifier: ^5.2.8
-        version: 5.2.8
+      '@fontsource-variable/newsreader':
+        specifier: ^5.2.5
+        version: 5.2.10
       '@fontsource-variable/sora':
         specifier: ^5.2.8
         version: 5.2.8
@@ -1283,8 +1283,8 @@ packages:
   '@floating-ui/utils@0.2.10':
     resolution: {integrity: sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ==}
 
-  '@fontsource-variable/orbitron@5.2.8':
-    resolution: {integrity: sha512-Jazvuj2cgBq663z1j/+JdwH2ztqQ8RaGhJgdHYphFbtfowiFaR74R8UgZl7x1skbXmUMWWH1jXfG7mrYFIYK0A==}
+  '@fontsource-variable/newsreader@5.2.10':
+    resolution: {integrity: sha512-MdI2iRwrqWpMOU/2aV2BgfZ4dJNlj/XlYaY8Zb7t87mWqHskYW0XiUANkt1cyOCiEfW2VQ0bQ5vZgGPp6B2B4w==}
 
   '@fontsource-variable/sora@5.2.8':
     resolution: {integrity: sha512-sP+ILTfi5r3cqmMBntI4ooQNxFI+LyHyD5hcPbWwwL4uh4kKFAkOz0w2veCXjz18fKRdva6OG0dY+5yQ02f30w==}
@@ -7980,7 +7980,7 @@ snapshots:
 
   '@floating-ui/utils@0.2.10': {}
 
-  '@fontsource-variable/orbitron@5.2.8': {}
+  '@fontsource-variable/newsreader@5.2.10': {}
 
   '@fontsource-variable/sora@5.2.8': {}
 
