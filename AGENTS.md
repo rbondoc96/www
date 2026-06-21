@@ -26,3 +26,15 @@ If a tradeoff is required, choose correctness and robustness over short-term con
 - Duplicate logic across multiple files is a code smell and should be avoided.
 - Don't be afraid to change existing code.
 - Don't take shortcuts by just adding local logic to solve a problem.
+
+## Design Context
+
+- `PRODUCT.md` (project root) holds the design strategy: register (`brand`), users,
+  product purpose, brand personality, anti-references, design principles, and a11y bar.
+  Read it before any UI/design work.
+- **Register:** brand — this is a personal site/portfolio where design is the product.
+- **Personality:** precise, understated, crafted; emotional target is calm & refined.
+- **In progress:** redesigning away from the current Orbitron sci-fi direction toward
+  calm refinement (keep precision, shed loudness). The token architecture (OKLCH,
+  dark/light) and Sora body are worth keeping; the visual direction is being reset.
+- **A11y bar:** WCAG 2.2 AA, with extra care on reduced-motion.
