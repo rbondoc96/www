@@ -1,6 +1,6 @@
-import { type SanityTestData } from "@/features/sanity/sanity-test";
-import { listExperiences } from "@/lib/experiences";
-import { testSanityConnection } from "@/lib/sanity";
+import { type SanityTestData } from "@/features/sanity/SanityTest.tsx";
+import { listExperiences } from "@/lib/experiences.ts";
+import { testSanityConnection } from "@/lib/sanity.ts";
 
 export async function getSanityTestData(): Promise<SanityTestData> {
   const isConnected = await testSanityConnection();

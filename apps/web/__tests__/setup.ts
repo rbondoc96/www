@@ -3,7 +3,6 @@ import { vi } from "vitest";
 
 process.env.VITE_POSTHOG_HOST = "https://us.i.posthog.com";
 process.env.VITE_POSTHOG_KEY = "test-posthog-key";
-process.env.VITE_RESUME_URL = "https://example.com/resume.pdf";
 process.env.VITE_SANITY_DATASET = "test-dataset";
 process.env.VITE_SANITY_PROJECT_ID = "test-project-id";
 

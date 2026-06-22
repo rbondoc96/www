@@ -26,3 +26,16 @@ If a tradeoff is required, choose correctness and robustness over short-term con
 - Duplicate logic across multiple files is a code smell and should be avoided.
 - Don't be afraid to change existing code.
 - Don't take shortcuts by just adding local logic to solve a problem.
+
+## Design Context
+
+- `PRODUCT.md` (project root) holds the design strategy: register (`brand`), users,
+  product purpose, brand personality, anti-references, design principles, and a11y bar.
+  Read it before any UI/design work.
+- **Register:** brand — this is a personal site/portfolio where design is the product.
+- **Personality:** precise, understated, crafted; emotional target is calm & refined.
+- **Visual system:** Fraunces (variable serif) for display via `--font-fraunces`, Sora
+  for body. Restrained color on OKLCH tokens (dark/light); the accent is a forest green
+  (`--accent`, hue ~152) used as punctuation/structure (timeline spine + nodes, link
+  hover, focus), never as a field. Moved off the prior Orbitron sci-fi direction.
+- **A11y bar:** WCAG 2.2 AA, with extra care on reduced-motion.

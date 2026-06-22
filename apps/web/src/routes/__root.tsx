@@ -1,11 +1,11 @@
 import "@/styles/globals.css";
 import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-router";
-import { type ReactNode } from "react";
-import { AnalyticsProvider } from "@/analytics/analytics-provider";
-import { ThemeProvider } from "@/components/theme/theme-provider";
-import { ThemeScript } from "@/components/theme/theme-script";
-import { sora } from "@/styles/fonts";
-import { cn } from "@/utilities/cn";
+import type { ReactNode } from "react";
+import { AnalyticsProvider } from "@/analytics/AnalyticsProvider.tsx";
+import { ThemeProvider } from "@/components/theme/ThemeProvider.tsx";
+import { ThemeScript } from "@/components/theme/ThemeScript.tsx";
+import { sora } from "@/styles/fonts.ts";
+import { cn } from "@/utilities/cn.ts";
 
 export const Route = createRootRoute({
   component: RootLayout,
@@ -66,7 +66,7 @@ function RootShell({ children }: Readonly<{ children: ReactNode }>): ReactNode {
       <body className={cn(sora.className, "relative", "antialiased", "min-h-screen", "flex flex-col")}>
         {children}
         <Scripts />
-      </body>
+              </body>
     </html>
   );
 }

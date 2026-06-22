@@ -2,8 +2,8 @@
 
 import { LaptopIcon, MoonIcon, SunIcon } from "lucide-react";
 import { type PropsWithChildren, type ReactNode, useEffect, useSyncExternalStore } from "react";
-import { isTheme, resolveTheme, Theme, themeStorageKey } from "@/components/theme/theme-store";
-import { cn } from "@/utilities/cn";
+import { isTheme, resolveTheme, Theme, themeStorageKey } from "@/components/theme/theme-store.ts";
+import { cn } from "@/utilities/cn.ts";
 
 type ThemeSwitchProps = {
   className?: string;

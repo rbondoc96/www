@@ -4,8 +4,8 @@ import { useRouterState } from "@tanstack/react-router";
 import posthogJs from "posthog-js";
 import { PostHogProvider, usePostHog } from "posthog-js/react";
 import { type PropsWithChildren, type ReactNode, Suspense, useEffect } from "react";
-import { TrackedEvent } from "@/analytics/tracked-event";
-import { env } from "@/utilities/env";
+import { TrackedEvent } from "@/analytics/TrackedEvent.ts";
+import { env } from "@/utilities/env.ts";
 
 function PostHogPageView(): ReactNode {
   const href = useRouterState({ select: (state) => state.location.href });

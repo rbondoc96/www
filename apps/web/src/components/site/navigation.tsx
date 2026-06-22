@@ -1,10 +1,20 @@
 import { MenuIcon } from "lucide-react";
-import { type ReactNode } from "react";
-import { Link } from "@/components/link";
-import { ThemeSwitch } from "@/components/theme/theme-provider";
-import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { orbitron } from "@/styles/fonts";
-import { cn } from "@/utilities/cn";
+import { Fragment, type ReactNode } from "react";
+import { Link } from "@/components/Link.tsx";
+import { ThemeSwitch } from "@/components/theme/ThemeProvider";
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet.tsx";
+import { fraunces } from "@/styles/fonts.ts";
+import { cn } from "@/utilities/cn.ts";
+
+// Flip `enabled` to true once a section has real content. Empty pages behind a nav link
+// read worse than no link, so Blog/Projects stay hidden until they're populated.
+const navItems = [
+  { enabled: false, label: "Blog", to: "/blog" },
+  { enabled: true, label: "Experience", to: "/experience" },
+  { enabled: false, label: "Projects", to: "/projects" },
+] as const;
+
+const enabledNavItems = navItems.filter((item) => item.enabled);
 
 export function HeaderNavigation(): ReactNode {
   return (
@@ -21,14 +31,14 @@ export function HeaderNavigation(): ReactNode {
         <div className="flex justify-center">
           <Link
             className={cn(
-              orbitron.className,
-              "text-center text-xl font-semibold md:text-2xl",
-              "hidden sm:inline",
+              fraunces.className,
+              "text-center text-lg font-medium tracking-[-0.01em] md:text-xl",
+              "hidden whitespace-nowrap sm:inline",
               "[view-transition-name:site-logo]",
             )}
             to="/"
           >
-            RDB
+            Rodrigo Bondoc
           </Link>
         </div>
         <ThemeSwitch className="flex justify-end" />
@@ -43,21 +53,17 @@ export function MobileSiteNavigation(): ReactNode {
       <SheetTrigger>
         <MenuIcon className="h-6 w-6" />
       </SheetTrigger>
-      <SheetContent side="top">
+      <SheetContent aria-describedby={undefined} side="top">
         <SheetTitle className="sr-only">Navigation</SheetTitle>
         <div className="flex flex-col gap-y-4 text-sm">
           <Link to="/" underline>
             Home
           </Link>
-          <Link to="/blog" underline>
-            Blog
-          </Link>
-          <Link to="/experience" underline>
-            Experience
-          </Link>
-          <Link to="/projects" underline>
-            Projects
-          </Link>
+          {enabledNavItems.map((item) => (
+            <Link key={item.to} to={item.to} underline>
+              {item.label}
+            </Link>
+          ))}
         </div>
       </SheetContent>
     </Sheet>
@@ -67,17 +73,14 @@ export function MobileSiteNavigation(): ReactNode {
 export function SiteNavigation(): ReactNode {
   return (
     <nav className="flex gap-x-1 text-sm font-light md:gap-x-2 md:text-base">
-      <Link to="/blog" underline>
-        Blog
-      </Link>
-      <span>·</span>
-      <Link to="/experience" underline>
-        Experience
-      </Link>
-      <span>·</span>
-      <Link to="/projects" underline>
-        Projects
-      </Link>
+      {enabledNavItems.map((item, index) => (
+        <Fragment key={item.to}>
+          {index > 0 && <span>·</span>}
+          <Link to={item.to} underline>
+            {item.label}
+          </Link>
+        </Fragment>
+      ))}
     </nav>
   );
 }

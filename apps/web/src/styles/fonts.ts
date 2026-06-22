@@ -1,5 +1,5 @@
-export const orbitron = {
-  className: "font-orbitron",
+export const fraunces = {
+  className: "font-fraunces",
 } as const;
 
 export const sora = {

@@ -1,9 +1,8 @@
-import { object, parse, pipe, string, url } from "valibot";
+import { object, parse, string } from "valibot";
 
 const envShape = {
   VITE_POSTHOG_HOST: string(),
   VITE_POSTHOG_KEY: string(),
-  VITE_RESUME_URL: pipe(string(), url()),
   VITE_SANITY_DATASET: string(),
   VITE_SANITY_PROJECT_ID: string(),
 };
@@ -21,7 +20,6 @@ function readPublicEnv(key: PublicEnvKey): string | undefined {
 export const env = parse(PublicEnv, {
   VITE_POSTHOG_HOST: readPublicEnv("VITE_POSTHOG_HOST"),
   VITE_POSTHOG_KEY: readPublicEnv("VITE_POSTHOG_KEY"),
-  VITE_RESUME_URL: readPublicEnv("VITE_RESUME_URL"),
   VITE_SANITY_DATASET: readPublicEnv("VITE_SANITY_DATASET"),
   VITE_SANITY_PROJECT_ID: readPublicEnv("VITE_SANITY_PROJECT_ID"),
 });

@@ -9,6 +9,9 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
     tanstackStart({
+      router: {
+        addExtensions: true,
+      },
       rsc: {
         enabled: true,
       },

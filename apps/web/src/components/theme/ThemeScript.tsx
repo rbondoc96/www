@@ -1,5 +1,5 @@
 import { type ReactNode } from "react";
-import { themeStorageKey } from "@/components/theme/theme-store";
+import { themeStorageKey } from "@/components/theme/theme-store.ts";
 
 type ThemeScriptProps = {
   nonce?: string;

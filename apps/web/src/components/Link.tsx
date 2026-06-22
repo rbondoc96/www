@@ -3,7 +3,7 @@
 import { Link as RouterLink } from "@tanstack/react-router";
 import { cva, type VariantProps } from "class-variance-authority";
 import { type AnchorHTMLAttributes, forwardRef } from "react";
-import { cn } from "@/utilities/cn";
+import { cn } from "@/utilities/cn.ts";
 
 const styles = cva([], {
   variants: {

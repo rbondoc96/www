@@ -1,5 +1,5 @@
 import { createClient } from "@sanity/client";
-import { env } from "@/utilities/env";
+import { env } from "@/utilities/env.ts";
 
 export const sanity = createClient({
   projectId: env.VITE_SANITY_PROJECT_ID,

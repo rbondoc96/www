@@ -1,5 +1,5 @@
 import * as v from "valibot";
-import { sanity } from "@/lib/sanity";
+import { sanity } from "@/lib/sanity.ts";
 
 const experienceSchema = v.object({
   _id: v.string(),
