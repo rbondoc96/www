@@ -1,10 +1,20 @@
 import { MenuIcon } from "lucide-react";
-import { type ReactNode } from "react";
+import { Fragment, type ReactNode } from "react";
 import { Link } from "@/components/Link.tsx";
 import { ThemeSwitch } from "@/components/theme/ThemeProvider";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet.tsx";
 import { fraunces } from "@/styles/fonts.ts";
 import { cn } from "@/utilities/cn.ts";
+
+// Flip `enabled` to true once a section has real content. Empty pages behind a nav link
+// read worse than no link, so Blog/Projects stay hidden until they're populated.
+const navItems = [
+  { enabled: false, label: "Blog", to: "/blog" },
+  { enabled: true, label: "Experience", to: "/experience" },
+  { enabled: false, label: "Projects", to: "/projects" },
+] as const;
+
+const enabledNavItems = navItems.filter((item) => item.enabled);
 
 export function HeaderNavigation(): ReactNode {
   return (
@@ -49,15 +59,11 @@ export function MobileSiteNavigation(): ReactNode {
           <Link to="/" underline>
             Home
           </Link>
-          <Link to="/blog" underline>
-            Blog
-          </Link>
-          <Link to="/experience" underline>
-            Experience
-          </Link>
-          <Link to="/projects" underline>
-            Projects
-          </Link>
+          {enabledNavItems.map((item) => (
+            <Link key={item.to} to={item.to} underline>
+              {item.label}
+            </Link>
+          ))}
         </div>
       </SheetContent>
     </Sheet>
@@ -67,17 +73,14 @@ export function MobileSiteNavigation(): ReactNode {
 export function SiteNavigation(): ReactNode {
   return (
     <nav className="flex gap-x-1 text-sm font-light md:gap-x-2 md:text-base">
-      <Link to="/blog" underline>
-        Blog
-      </Link>
-      <span>·</span>
-      <Link to="/experience" underline>
-        Experience
-      </Link>
-      <span>·</span>
-      <Link to="/projects" underline>
-        Projects
-      </Link>
+      {enabledNavItems.map((item, index) => (
+        <Fragment key={item.to}>
+          {index > 0 && <span>·</span>}
+          <Link to={item.to} underline>
+            {item.label}
+          </Link>
+        </Fragment>
+      ))}
     </nav>
   );
 }
