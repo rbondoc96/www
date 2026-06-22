@@ -3,6 +3,7 @@ import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
 import { BlogPostDocument } from "./schemas/documents/blog-post-document";
 import { ExperienceDocument } from "./schemas/documents/experience-document";
+import { ProjectDocument } from "./schemas/documents/project-document";
 import { TagDocument } from "./schemas/documents/tag-document";
 
 export default defineConfig({
@@ -15,6 +16,6 @@ export default defineConfig({
   plugins: [structureTool(), visionTool()],
 
   schema: {
-    types: [BlogPostDocument, ExperienceDocument, TagDocument],
+    types: [BlogPostDocument, ExperienceDocument, ProjectDocument, TagDocument],
   },
 });
