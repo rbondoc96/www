@@ -1,5 +1,4 @@
 # AI
-.claude/*.local.*
 AGENTS.local.md
 AGENTS.override.md
 CLAUDE.local.md
@@ -18,6 +17,9 @@ node_modules
 
 # IDEs
 .idea
+
+# Local
+*.local.*
 
 # OS
 .DS_Store
