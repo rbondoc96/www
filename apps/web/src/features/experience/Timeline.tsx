@@ -29,11 +29,11 @@ function TimelineItem({ experience }: TimelineItemProps): ReactNode {
         <ArrowUpRightIcon className="h-4 w-4 text-muted-foreground transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-accent md:h-5 md:w-5" />
       </a>
 
-      <div className="mt-5 flex flex-col gap-y-3">
+      <div className="mt-5 flex flex-col gap-2">
         {experience.titles.map((title, index) => (
-          <div key={index} className="flex flex-col">
+          <div key={index} className="flex items-baseline justify-between gap-4">
             <span className="font-medium md:text-lg">{title.title}</span>
-            <span className="text-sm text-muted-foreground">{title.period}</span>
+            <span className="text-sm whitespace-nowrap text-muted-foreground">{title.period}</span>
           </div>
         ))}
       </div>
@@ -48,7 +48,7 @@ function TimelineItem({ experience }: TimelineItemProps): ReactNode {
 
       {experience.tags.length > 0 && (
         <p className="mt-5 text-xs leading-relaxed tracking-wide text-muted-foreground">
-          {experience.tags.join("  ·  ")}
+          {experience.tags.slice(0, 5).join("  ·  ")}
         </p>
       )}
     </li>
