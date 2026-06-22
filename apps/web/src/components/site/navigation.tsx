@@ -12,6 +12,7 @@ const navItems = [
   { enabled: false, label: "Blog", to: "/blog" },
   { enabled: true, label: "Experience", to: "/experience" },
   { enabled: false, label: "Projects", to: "/projects" },
+  { enabled: true, label: "Contact", to: "/contact" },
 ] as const;
 
 const enabledNavItems = navItems.filter((item) => item.enabled);

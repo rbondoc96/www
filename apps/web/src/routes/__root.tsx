@@ -66,7 +66,7 @@ function RootShell({ children }: Readonly<{ children: ReactNode }>): ReactNode {
       <body className={cn(sora.className, "relative", "antialiased", "min-h-screen", "flex flex-col")}>
         {children}
         <Scripts />
-              </body>
+      </body>
     </html>
   );
 }

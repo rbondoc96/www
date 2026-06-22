@@ -24,6 +24,7 @@
     "posthog-js": "^1.215.1",
     "react": "catalog:",
     "react-dom": "catalog:",
+    "resend": "^6.14.0",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7",
     "valibot": "^1.0.0"
