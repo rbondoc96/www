@@ -63,7 +63,7 @@ type TimelineProps = {
 
 export function Timeline({ experiences }: TimelineProps): ReactNode {
   return (
-    <ol className="mt-4">
+    <ol className="mx-auto mt-4 w-full max-w-2xl">
       {experiences.map((experience, index) => (
         <TimelineItem key={index} experience={experience} />
       ))}
